@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6a77t6d6pmu3"]
 
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/Doge.tscn" id="2_hjdua"]
-[ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://Bonus/Bonus.tscn" id="3_1oxnb"]
+[ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://assets/models/components/Bonus/Bonus.tscn" id="3_1oxnb"]
 [ext_resource type="PackedScene" uid="uid://l7g16loalw6l" path="res://assets/models/arena/sb_arena_2.tscn" id="3_wqmxj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7tlo"]
@@ -81,9 +81,12 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -14.9501, -50.2734)
 
 [node name="Bonus2" parent="." instance=ExtResource("3_1oxnb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.37579, -9.31511, -26.6689)
+script = null
 
 [node name="Bonus" parent="." instance=ExtResource("3_1oxnb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1101, -9.31511, -25.0575)
+script = null
 
 [node name="Bonus3" parent="." instance=ExtResource("3_1oxnb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.15513, -9.31511, -46.0091)
+script = null
