@@ -170,7 +170,7 @@ autoplay = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_551gq")
-volume_db = -8.0
+volume_db = -20.0
 autoplay = true
 parameters/looping = true
 
