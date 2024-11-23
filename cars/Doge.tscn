@@ -64,17 +64,17 @@ script = ExtResource("3_gkqu7")
 target_distance = 5
 speed = 10.0
 
-[node name="doge-body" parent="." index="7" instance=ExtResource("3_om8jj")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="8"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="7"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.590649, -2.08042)
 shape = SubResource("CapsuleShape3D_n7qdn")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="9"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="8"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.000778168, 0.603737, -1.11035)
 shape = SubResource("BoxShape3D_xaafv")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="10"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="9"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.000778168, 0.653567, 1.99781)
 shape = SubResource("CapsuleShape3D_7kmqy")
+
+[node name="doge-body" parent="." index="10" instance=ExtResource("3_om8jj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
