@@ -15,7 +15,7 @@ var life : int = 0
 func _ready() -> void:
 	$SubViewport/HealthBar.max_value = default_life
 	$SubViewport/HealthBar.value = default_life
-	engine_sound.play()
+	#engine_sound.play()
 	
 	life = default_life
 

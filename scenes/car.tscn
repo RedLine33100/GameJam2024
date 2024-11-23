@@ -168,19 +168,20 @@ player_number = 2
 stream = ExtResource("3_yo4ry")
 autoplay = true
 
-[node name="Bonus" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("4_dsbxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, -33)
-
-[node name="Bonus2" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("4_dsbxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95746, -2.01908, -27.5673)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_551gq")
+volume_db = -8.0
 autoplay = true
 parameters/looping = true
 
 [node name="sb_arena" parent="." instance=ExtResource("3_2l1a1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.605583, -30.6433)
+
+[node name="Bonus" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, -33)
+
+[node name="Bonus2" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95746, -2.01908, -27.5673)
 
 [connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
 [connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car2" to="GridContainer/SubViewportContainer2/SubViewport/car2" method="_on_body_entered"]
