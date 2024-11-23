@@ -16,7 +16,7 @@ func shoot():
 		get_parent().add_child(projectile)
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed(getTouch("croix")):
 		shoot()
 
 @export var spawnBarrier = false
