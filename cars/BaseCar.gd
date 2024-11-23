@@ -8,7 +8,7 @@ var steer_target = 0
 @export var default_life : int = 10
 var life : int = 0
 
-@onready var engine_sound = $EngineSound as AudioStreamPlayer3D
+@onready var engine_sound = $EngineSound as AudioStreamPlayer
 
 func _ready() -> void:
 	engine_sound.play()
@@ -81,13 +81,9 @@ func _physics_process(delta):
 	else:
 		brake = 0.0
 		
-	# var max_speed = 200
+	var max_speed = 200
 	# Ou utilisez volume linéaire
-	#engine_sound.volume_db = min(30, speed*3.8*30 / max_speed)
-	#print("Volume :", engine_sound.volume_db)
-	
-	#if !engine_sound.playing:
-	#	engine_sound.play()
+	engine_sound.volume_db = min(30, speed*3.8*30 / max_speed)
 		
 	if Input.is_action_pressed(getTouch("select")):
 		brake=3
