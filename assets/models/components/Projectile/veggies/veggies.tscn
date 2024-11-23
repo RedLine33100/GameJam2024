@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://ysllbth4tx6j"]
 
-[ext_resource type="PackedScene" uid="uid://bexnn7783yvi" path="res://Projectile/veggies/veggies.blend" id="1_ui5qh"]
-[ext_resource type="Texture2D" uid="uid://dvaytdb1q0xf4" path="res://Projectile/veggies/textures/Eggplant_Jalapeno_Cucumber.png" id="2_ei5q6"]
-[ext_resource type="Texture2D" uid="uid://cbtj6j4lecrhp" path="res://Projectile/veggies/textures/Carrot_Lettuce_Brocoli.png" id="3_yqgfo"]
-[ext_resource type="Texture2D" uid="uid://66xyn4q7wqh0" path="res://Projectile/veggies/textures/Potato_Onion_Tomato_Pepper.png" id="4_gcmfa"]
-[ext_resource type="Texture2D" uid="uid://bin2417p45fbv" path="res://Projectile/veggies/textures/Bellpeppers.png" id="5_2ertp"]
+[ext_resource type="PackedScene" uid="uid://bexnn7783yvi" path="res://assets/models/components/Projectile/veggies/veggies.blend" id="1_ui5qh"]
+[ext_resource type="Texture2D" uid="uid://dvaytdb1q0xf4" path="res://assets/models/components/Projectile/veggies/textures/Eggplant_Jalapeno_Cucumber.png" id="2_ei5q6"]
+[ext_resource type="Texture2D" uid="uid://563cu6dwgome" path="res://assets/models/components/Projectile/veggies/textures/Carrot_Lettuce_Brocoli.png" id="3_yqgfo"]
+[ext_resource type="Texture2D" uid="uid://66xyn4q7wqh0" path="res://assets/models/components/Projectile/veggies/textures/Potato_Onion_Tomato_Pepper.png" id="4_gcmfa"]
+[ext_resource type="Texture2D" uid="uid://bin2417p45fbv" path="res://assets/models/components/Projectile/veggies/textures/Bellpeppers.png" id="5_2ertp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0en2"]
 albedo_texture = ExtResource("2_ei5q6")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvaytdb1q0xf4"
-path.s3tc="res://.godot/imported/Eggplant_Jalapeno_Cucumber.png-02ea8b18f15fc38ae2e27a19ef83b197.s3tc.ctex"
+uid="uid://bddrf44363b2"
+path.s3tc="res://.godot/imported/Carrot_Lettuce_Brocoli.png-cd5b0de1485331b127ecfeb4aac748fa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Projectile/veggies/textures/Eggplant_Jalapeno_Cucumber.png"
-dest_files=["res://.godot/imported/Eggplant_Jalapeno_Cucumber.png-02ea8b18f15fc38ae2e27a19ef83b197.s3tc.ctex"]
+source_file="res://assets/models/components/Projectile/veggies/textures/Carrot_Lettuce_Brocoli.png"
+dest_files=["res://.godot/imported/Carrot_Lettuce_Brocoli.png-cd5b0de1485331b127ecfeb4aac748fa.s3tc.ctex"]
 
 [params]
 

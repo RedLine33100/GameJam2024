@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bin2417p45fbv"
-path.s3tc="res://.godot/imported/Bellpeppers.png-7bdf6f7a0fcaceaa397c17bf278e8d9f.s3tc.ctex"
+uid="uid://dvaytdb1q0xf4"
+path.s3tc="res://.godot/imported/Eggplant_Jalapeno_Cucumber.png-4d2cabc586e04ebb83b554e69fcdf40c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Projectile/veggies/textures/Bellpeppers.png"
-dest_files=["res://.godot/imported/Bellpeppers.png-7bdf6f7a0fcaceaa397c17bf278e8d9f.s3tc.ctex"]
+source_file="res://assets/models/components/Projectile/veggies/textures/Eggplant_Jalapeno_Cucumber.png"
+dest_files=["res://.godot/imported/Eggplant_Jalapeno_Cucumber.png-4d2cabc586e04ebb83b554e69fcdf40c.s3tc.ctex"]
 
 [params]
 

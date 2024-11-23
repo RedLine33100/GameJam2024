@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bexnn7783yvi"
-path="res://.godot/imported/veggies.blend-0f8a9bae245f4540976de4bca2e00518.scn"
+path="res://.godot/imported/veggies.blend-d53bbbf48f2d489be37b3e9e9025b747.scn"
 
 [deps]
 
-source_file="res://Projectile/veggies/veggies.blend"
-dest_files=["res://.godot/imported/veggies.blend-0f8a9bae245f4540976de4bca2e00518.scn"]
+source_file="res://assets/models/components/Projectile/veggies/veggies.blend"
+dest_files=["res://.godot/imported/veggies.blend-d53bbbf48f2d489be37b3e9e9025b747.scn"]
 
 [params]
 
