@@ -96,11 +96,20 @@ volume_db = -20.0
 autoplay = true
 parameters/looping = true
 
-[node name="Bonus" parent="." instance=ExtResource("4_dsbxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05564, -2.01908, -27.0269)
-
 [node name="sb_arena2" parent="." instance=ExtResource("7_k37vi")]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.31414, -5.99625, -25.283)
+
+[node name="Bonus" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1825, -2.05175, -32.028)
+
+[node name="Bonus2" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3661, -2.05175, -37.205)
+
+[node name="Bonus3" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6741, -2.05175, -13.6151)
+
+[node name="Bonus4" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05043, -2.05175, 9.34626)
 
 [connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
 [connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car" to="GridContainer/SubViewportContainer2/SubViewport/car" method="_on_body_entered"]

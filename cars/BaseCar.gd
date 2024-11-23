@@ -102,14 +102,14 @@ func _physics_process(delta):
 		$wheal3.wheel_friction_slip=3
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
 
-func heal():
-	life += 1;
+func heal(amount: int):
+	life += amount;
 	if life > default_life:
 		life = default_life;
 	$SubViewport/HealthBar.value = life
 
 func damage(damage: int):
-	life-=damage
+	life -= damage
 	$SubViewport/HealthBar.value = life
 	if(life>0):
 		return
