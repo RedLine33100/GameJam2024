@@ -66,8 +66,13 @@ transform = Transform3D(1.1, 0, 0, 0, 2.2, 0, 0, 0, 1.1, 0.0026385, 1.40556, -0.
 script = ExtResource("3_d1dwl")
 
 [node name="Camera3D" parent="look" index="0"]
+fov = 80.0
 target_distance = 5
-speed = 10.0
+
+[node name="Label" parent="Hud" index="1"]
+text = "Player 1!
+"
+uppercase = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="7"]
 transform = Transform3D(-9.61651e-08, -1.35, 0, 2.2, -5.90104e-08, 0, 0, 0, 2, 0, 1.01366, -1.42507)
