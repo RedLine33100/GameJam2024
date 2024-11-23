@@ -54,3 +54,26 @@ func _physics_process(delta):
 
 func traction(speed):
 	apply_central_force(Vector3.DOWN*speed)
+
+func test():
+	print("Je suis un test: "+str(player_number))
+
+# Function to calculate damage based on collision velocity
+func calculate_damage(collision_velocity: float) -> int:
+	var max_damage = 100  # Maximum possible damage
+	var damage = collision_velocity * 0.5  # Base damage proportional to collision velocity
+	return int(min(damage, max_damage))
+
+func _on_body_entered(testBody: Node) -> void:
+	if not testBody is VehicleBody3D:
+		return;
+	var body : VehicleBody3D = testBody
+	# Calculate relative velocity at the point of collision
+	var collision_velocity = (linear_velocity - body.linear_velocity).length()
+	# Apply damage based on the collision velocity
+	var damage = calculate_damage(collision_velocity)
+	# Reduce health by the calculated damage
+	var health = damage
+	# Print out the damage and health status
+	print("P "+str(player_number)+" f Collision Damage: ", damage)
+	print("P "+str(player_number)+" fRemaining Health: ", health)
