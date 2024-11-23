@@ -34,7 +34,7 @@ _data = {
 [node name="sb_box" instance=ExtResource("1_8br46")]
 
 [node name="Cube" parent="." index="0"]
-transform = Transform3D(0.906241, -0.422761, 1.74846e-07, 0.422761, 0.906241, -7.10543e-15, -1.58452e-07, 7.39179e-08, 1, 0, 0, 0)
+transform = Transform3D(0.906241, -0.42276, 1.74846e-07, 0.42276, 0.906241, -1.45661e-13, -1.58452e-07, 7.39178e-08, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_nfhti")
 
 [node name="Light" parent="." index="1"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6a77t6d6pmu3"]
 
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/Doge.tscn" id="2_hjdua"]
+[ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://Bonus/Bonus.tscn" id="3_1oxnb"]
 [ext_resource type="PackedScene" uid="uid://cobf31vkp4gfu" path="res://assets/models/arena/sb_arena.tscn" id="3_dyq1g"]
-[ext_resource type="PackedScene" uid="uid://8ou3kjq1qcsl" path="res://assets/models/box/sb_box.tscn" id="3_np22s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7tlo"]
 sky_top_color = Color(0.419608, 0.54902, 0.619608, 1)
@@ -79,5 +79,5 @@ player_number = 2
 [node name="sb_arena" parent="." instance=ExtResource("3_dyq1g")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.38994, -6.62573, 4.16464)
 
-[node name="sb_box" parent="." instance=ExtResource("3_np22s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.340901, -5.897, -22.6007)
+[node name="Bonus" parent="." instance=ExtResource("3_1oxnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86255, -8.51038, -24.2271)
