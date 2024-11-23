@@ -9,13 +9,17 @@ var steer_target = 0
 var life : int = 0
 
 
+	
+@onready var engine_sound = $EngineSound as AudioStreamPlayer
 
 func _ready() -> void:
 	$SubViewport/HealthBar.max_value = default_life
 	$SubViewport/HealthBar.value = default_life
+	engine_sound.play()
+	
 	life = default_life
 
-@export var projectile_scene = load("res://Projectile/Projectile.tscn")
+@export var projectile_scene = load("res://assets/models/components/Projectile/Projectile.tscn")
 func shoot():
 	if projectile_scene:
 		var projectile = projectile_scene.instantiate()
@@ -29,7 +33,7 @@ func _process(delta):
 		shoot()
 
 @export var spawnBarrier = false
-@export var barrier_scene = load("res://Barrier/Barrier.tscn")
+@export var barrier_scene = load("res://assets/models/components/Barrier/Barrier.tscn")
 var last_barrier_position = Vector3.ZERO
 @export var barrier_spacing = 1.0  # Distance minimale entre deux barrières
 func spawn_barrier():
@@ -59,13 +63,16 @@ func _physics_process(delta):
 	steer_target *= STEER_LIMIT
 	if Input.is_action_pressed(getTouch("down")):
 	# Increase engine force at low speeds to make the initial acceleration faster.
-
+		
 		if speed < 20 and speed != 0:
 			engine_force = clamp(engine_force_value * 3 / speed, 0, 300)
 		else:
 			engine_force = engine_force_value
+			
 	else:
 		engine_force = 0
+		
+			
 	if Input.is_action_pressed(getTouch("up")):
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		if fwd_mps >= -1:
@@ -77,6 +84,10 @@ func _physics_process(delta):
 			brake = 1
 	else:
 		brake = 0.0
+		
+	var max_speed = 200
+	# Ou utilisez volume linéaire
+	engine_sound.volume_db = min(30, speed*3.8*30 / max_speed)
 		
 	if Input.is_action_pressed(getTouch("select")):
 		brake=3
