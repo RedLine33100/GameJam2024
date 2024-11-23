@@ -39,7 +39,7 @@ func _play_sound_and_remove():
 func apply_bonus(player: Node):
 	match bonus_type:
 		"health":
-			player.heal()
+			player.heal(10)
 		"speed":
 			player.apply_speed_boost()
 		"shield":

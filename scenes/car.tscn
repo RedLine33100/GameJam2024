@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://doskmpsk8cak8" path="res://assets/images/SkyBox/M3_Anime_equirectangular-png_Low_poly_skybox_of_223829484_12506313.png" id="1_r7bup"]
 [ext_resource type="PackedScene" uid="uid://daf68dab700ad" path="res://assets/models/cars/CrousCar1.tscn" id="3_lr3vj"]
 [ext_resource type="AudioStream" uid="uid://bxssu420u6obo" path="res://assets/audio/car-engine-start-outside-72279.mp3" id="3_yo4ry"]
-[ext_resource type="PackedScene" uid="uid://bk8lfs1oxhvu1" path="res://assets/models/components/Projectile/Projectile.tscn" id="4_8uw5r"]
 [ext_resource type="AudioStream" uid="uid://163g77ot12kq" path="res://assets/audio/ambient-piano-logo-165357.mp3" id="4_551gq"]
 [ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://assets/models/components/Bonus/Bonus.tscn" id="4_dsbxc"]
 [ext_resource type="PackedScene" uid="uid://3h38kou5514b" path="res://assets/models/cars/CrousCar2.tscn" id="5_gf57a"]
@@ -97,11 +96,20 @@ volume_db = -20.0
 autoplay = true
 parameters/looping = true
 
-[node name="Bonus" parent="." instance=ExtResource("4_dsbxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05564, -2.01908, -27.0269)
-
 [node name="sb_arena2" parent="." instance=ExtResource("7_k37vi")]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.31414, -5.99625, -25.283)
+
+[node name="Bonus" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1825, -2.05175, -32.028)
+
+[node name="Bonus2" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3661, -2.05175, -37.205)
+
+[node name="Bonus3" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6741, -2.05175, -13.6151)
+
+[node name="Bonus4" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05043, -2.05175, 9.34626)
 
 [connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
 [connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
