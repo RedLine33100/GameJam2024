@@ -2,10 +2,19 @@ extends VehicleBody3D
 
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.6
-var steer_target = 0
 @export var engine_force_value = 40
 @export var player_number = 1
-@export var default_life : int = 10
+@export var default_life : int = 100
+@export var spawnBarrier = false
+@export var barrier_scene : Resource
+@export var barrier_spacing = 1.0  # Distance minimale entre deux barrières
+# Damage multiplier for frontal collisions
+@export var frontal_damage_multiplier: float = 1.5
+@export var base_damage: float = 10.0
+@export var max_repulsion_force: float = 100.0  # Maximum repulsion force
+@export var projectile_scene : Resource
+var last_barrier_position = Vector3.ZERO
+var steer_target = 0
 var life : int = 0
 
 
@@ -19,7 +28,6 @@ func _ready() -> void:
 	
 	life = default_life
 
-@export var projectile_scene = load("res://assets/models/components/Projectile/Projectile.tscn")
 func shoot():
 	if projectile_scene:
 		var projectile = projectile_scene.instantiate()
@@ -32,10 +40,6 @@ func _process(delta):
 	if Input.is_action_just_pressed(getTouch("croix")):
 		shoot()
 
-@export var spawnBarrier = false
-@export var barrier_scene = load("res://assets/models/components/Barrier/Barrier.tscn")
-var last_barrier_position = Vector3.ZERO
-@export var barrier_spacing = 1.0  # Distance minimale entre deux barrières
 func spawn_barrier():
 	if barrier_scene:
 		var barrier = barrier_scene.instantiate()
@@ -98,11 +102,6 @@ func _physics_process(delta):
 		$wheal3.wheel_friction_slip=3
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
 
-
-
-func traction(speed):
-	apply_central_force(Vector3.DOWN*speed)
-	
 func damage(damage: int):
 	life-=damage
 	$SubViewport/HealthBar.value = life
@@ -113,44 +112,35 @@ func damage(damage: int):
 	self.collision_layer &= ~(1 << layer)
 	self.collision_mask &= ~(1 << layer)
 
-# Function to calculate the angle between the two cars' orientation vectors
-func calculate_impact_angle(other_car: VehicleBody3D) -> float:
-	# Get the forward direction of the current car and the other car
-	var car_forward = transform.basis.z.normalized()  # Direction car is facing
-	var other_car_forward = other_car.transform.basis.z.normalized()  # Direction other car is facing
+func traction(speed):
+	apply_central_force(Vector3.DOWN*speed)
 	
-	# Calculate the dot product between the two direction vectors
-	var dot_product = car_forward.dot(other_car_forward)
+# Function to calculate damage on collision
+func _on_body_entered(body: Node):
+	if body is not VehicleBody3D:
+		return
+	if not body or not body.global_transform:
+		return
+	# Get the car's front direction (Z-axis in 3D is typically "forward")
+	var front_vector = -global_transform.basis.z.normalized()
 	
-	# The angle is the arccosine of the dot product
-	var angle = rad_to_deg(acos(dot_product))  # Convert radians to degrees
-	return angle
-
-# Function to calculate damage based on collision velocity and angle
-func calculate_damage(collision_velocity: float, angle_of_impact: float) -> int:
-	var max_damage = 100  # Maximum possible damage
-	var base_damage = collision_velocity * 0.5  # Base damage proportional to collision velocity
+	# Get collision normal (approximate using the colliding object's position)
+	var collision_normal = (body.global_position - global_position).normalized()
 	
-	# Adjust damage based on the angle of impact (0 degrees is head-on)
-	var angle_factor = 1.0 - (angle_of_impact / 180.0)  # Scale damage between 0 (side impact) to 1 (head-on)
-	
-	# Final damage is base damage multiplied by the angle factor
-	var damage = base_damage * angle_factor
-	
-	# Ensure damage doesn't exceed max_damage
-	return int(min(damage, max_damage))
-
-func _on_body_entered(testBody: Node) -> void:
-	if not testBody is VehicleBody3D:
-		return;
-	var body : VehicleBody3D = testBody
-	# Calculate relative velocity at the point of collision
-	var collision_velocity = (linear_velocity - body.linear_velocity).length()
-	# Apply damage based on the collision velocity
-	var damage = calculate_damage(collision_velocity, calculate_impact_angle(body))
-	# Reduce health by the calculated damage
-	var health = damage
-	# Print out the damage and health status
-	print("P "+str(player_number)+" f Collision Damage: ", damage)
-	print("P "+str(player_number)+" fRemaining Health: ", health)
-	body.damage(damage)
+	# Check if the collision is from the front
+	var frontal_hit = collision_normal.dot(front_vector) > 0.7  # Adjust threshold as needed
+	if frontal_hit:
+		# Calculate relative velocity magnitude
+		var relative_velocity = (linear_velocity - (body.linear_velocity if body.has_method("get_linear_velocity") else Vector3.ZERO)).length()
+		
+		# Calculate damage
+		var dmgValue = base_damage + frontal_damage_multiplier * relative_velocity
+		body.damage(dmgValue)
+		# Apply repulsion based on the collided object's "life"
+		var resLife = body.life  # Get the life value of the collided object
+		var repulsion_force = max_repulsion_force * (1.0 - (resLife / 100.0))  # Scale force by life percentage
+		
+		# Apply repulsion impulse
+		if body is RigidBody3D:
+			var nf = (collision_normal * repulsion_force) * 10
+			body.apply_central_impulse(nf)

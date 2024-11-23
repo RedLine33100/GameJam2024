@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://doskmpsk8cak8" path="res://assets/images/SkyBox/M3_Anime_equirectangular-png_Low_poly_skybox_of_223829484_12506313.png" id="1_r7bup"]
 [ext_resource type="Texture2D" uid="uid://cpwiyoo7664vj" path="res://cars/Models/texture_10.png" id="2_4uho4"]
 [ext_resource type="PackedScene" uid="uid://cobf31vkp4gfu" path="res://assets/models/arena/sb_arena.tscn" id="3_2l1a1"]
+[ext_resource type="PackedScene" uid="uid://bar3fqmpwcwwn" path="res://Barrier/Barrier.tscn" id="3_kistv"]
+[ext_resource type="PackedScene" uid="uid://bk8lfs1oxhvu1" path="res://Projectile/Projectile.tscn" id="4_8uw5r"]
+[ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://Bonus/Bonus.tscn" id="4_dsbxc"]
 [ext_resource type="AudioStream" uid="uid://bxssu420u6obo" path="res://assets/audio/car-engine-start-outside-72279.mp3" id="3_yo4ry"]
 [ext_resource type="AudioStream" uid="uid://163g77ot12kq" path="res://assets/audio/ambient-piano-logo-165357.mp3" id="4_551gq"]
 [ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://assets/models/components/Bonus/Bonus.tscn" id="4_dsbxc"]
@@ -141,6 +144,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.184, -6.309)
 collision_layer = 3
 collision_mask = 3
 engine_force_value = 200
+barrier_scene = ExtResource("3_kistv")
+projectile_scene = ExtResource("4_8uw5r")
 
 [node name="EngineSound" type="AudioStreamPlayer" parent="GridContainer/SubViewportContainer/SubViewport/car"]
 stream = ExtResource("3_yo4ry")
@@ -163,6 +168,8 @@ collision_layer = 3
 collision_mask = 3
 engine_force_value = 200
 player_number = 2
+barrier_scene = ExtResource("3_kistv")
+projectile_scene = ExtResource("4_8uw5r")
 
 [node name="EngineSound" type="AudioStreamPlayer" parent="GridContainer/SubViewportContainer2/SubViewport/car2"]
 stream = ExtResource("3_yo4ry")
@@ -181,7 +188,16 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.605583, -30.6433)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, -33)
 
 [node name="Bonus2" parent="." instance=ExtResource("4_dsbxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95746, -2.01908, -27.5673)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.37397, -2.01908, -33.8444)
+script = null
+
+[node name="Bonus3" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.244681, -2.01908, -40.5965)
+script = null
+
+[node name="Bonus4" parent="." instance=ExtResource("4_dsbxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71109, -2.01908, -25.1151)
+script = null
 
 [connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
 [connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car2" to="GridContainer/SubViewportContainer2/SubViewport/car2" method="_on_body_entered"]

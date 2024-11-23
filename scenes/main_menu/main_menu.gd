@@ -4,7 +4,7 @@ extends Control
 @onready var start_button = $MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Start_Button as Button
 @onready var option_button = $MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Option_Button as Button
 @onready var quit_button = $MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Quit_Button as Button
-@onready var start_level = preload("res://scenes/car.tscn") as PackedScene
+@export var start_level : PackedScene
 @onready var options_menu = $Option_Menu as OptionsMenu
 @onready var margin_container = $MarginContainer as MarginContainer
 
@@ -15,7 +15,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
 
 func bind_buttons() -> void:
 	start_button.button_down.connect(on_start_pressed)
