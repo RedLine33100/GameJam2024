@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dw4erjxxvl6tj"]
 
-[ext_resource type="Script" path="res://Bonus/Bonus.gd" id="1_1fiew"]
+[ext_resource type="Script" path="res://assets/models/components/Bonus/Bonus.gd" id="1_1fiew"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7b7ru"]
 albedo_color = Color(1, 0.783333, 0, 1)

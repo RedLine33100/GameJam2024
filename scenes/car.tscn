@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://jh2l8dfkng6d"]
+[gd_scene load_steps=12 format=3 uid="uid://jh2l8dfkng6d"]
 
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/Doge.tscn" id="1_mdet3"]
 [ext_resource type="Texture2D" uid="uid://cpwiyoo7664vj" path="res://cars/Models/texture_10.png" id="2_4uho4"]
 [ext_resource type="PackedScene" uid="uid://cobf31vkp4gfu" path="res://assets/models/arena/sb_arena.tscn" id="3_2l1a1"]
-[ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://Bonus/Bonus.tscn" id="4_dsbxc"]
-[ext_resource type="AudioStream" uid="uid://bxssu420u6obo" path="res://audio/car-engine-start-outside-72279.mp3" id="3_yo4ry"]
+[ext_resource type="AudioStream" uid="uid://bxssu420u6obo" path="res://assets/audio/car-engine-start-outside-72279.mp3" id="3_yo4ry"]
+[ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://assets/models/components/Bonus/Bonus.tscn" id="4_dsbxc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7tlo"]
 sky_top_color = Color(0.419608, 0.54902, 0.619608, 1)
@@ -138,9 +138,17 @@ render_target_update_mode = 4
 
 [node name="car" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_mdet3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.184, -6.309)
-collision_layer = 2
+collision_layer = 3
 collision_mask = 3
 engine_force_value = 200
+
+[node name="EngineSound" type="AudioStreamPlayer3D" parent="GridContainer/SubViewportContainer/SubViewport/car"]
+stream = ExtResource("3_yo4ry")
+volume_db = 80.0
+max_db = 6.0
+autoplay = true
+doppler_tracking = 1
+parameters/looping = true
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="GridContainer"]
 layout_mode = 2
@@ -155,19 +163,21 @@ render_target_update_mode = 4
 
 [node name="car2" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("1_mdet3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564415, 0.184314, -6.30866)
-collision_layer = 2
+collision_layer = 3
 collision_mask = 3
 engine_force_value = 200
 player_number = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="EngineSound" type="AudioStreamPlayer3D" parent="GridContainer/SubViewportContainer2/SubViewport/car2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5644, -0.000313997, -0.000339985)
 stream = ExtResource("3_yo4ry")
 autoplay = true
+doppler_tracking = 1
 parameters/looping = true
 
-[connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
-[connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car2" to="GridContainer/SubViewportContainer2/SubViewport/car2" method="_on_body_entered"]
-
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yo4ry")
+parameters/looping = true
 
 [node name="sb_arena" parent="." instance=ExtResource("3_2l1a1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.605583, -30.6433)
@@ -183,3 +193,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.244681, -2.01908, -40.5965)
 
 [node name="Bonus4" parent="." instance=ExtResource("4_dsbxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71109, -2.01908, -25.1151)
+
+[connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
+[connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car2" to="GridContainer/SubViewportContainer2/SubViewport/car2" method="_on_body_entered"]
