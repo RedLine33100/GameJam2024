@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0cwl00b76ov3"]
+
+[ext_resource type="Script" path="res://scenes/game_over_menu/game_over.gd" id="1_x2n2d"]
+
+[node name="Game_Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x2n2d")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="WinnerLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 80
+text = "TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainMenu_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MENU PRINCIPAL
+"
+
+[node name="Quit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "QUITTER"

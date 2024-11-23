@@ -6,8 +6,7 @@ var steer_target = 0
 @export var engine_force_value = 40
 @export var player_number = 1
 @export var default_life : int = 10
-var life : int = 0
-
+@export var life : int = 0
 
 	
 @onready var engine_sound = $EngineSound as AudioStreamPlayer
@@ -112,6 +111,7 @@ func damage(damage: int):
 	var layer = 2
 	self.collision_layer &= ~(1 << layer)
 	self.collision_mask &= ~(1 << layer)
+	
 
 # Function to calculate the angle between the two cars' orientation vectors
 func calculate_impact_angle(other_car: VehicleBody3D) -> float:

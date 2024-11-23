@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://jh2l8dfkng6d"]
+[gd_scene load_steps=14 format=3 uid="uid://jh2l8dfkng6d"]
 
+[ext_resource type="Script" path="res://scenes/car.gd" id="1_lg0ae"]
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/Doge.tscn" id="1_mdet3"]
 [ext_resource type="Texture2D" uid="uid://cpwiyoo7664vj" path="res://cars/Models/texture_10.png" id="2_4uho4"]
 [ext_resource type="PackedScene" uid="uid://cobf31vkp4gfu" path="res://assets/models/arena/sb_arena.tscn" id="3_2l1a1"]
@@ -39,6 +40,7 @@ radial_segments = 20
 rings = 1
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_lg0ae")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8dxyn")
@@ -179,15 +181,19 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.605583, -30.6433)
 
 [node name="Bonus" parent="." instance=ExtResource("4_dsbxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9065, -2.01908, -27.5071)
+script = null
 
 [node name="Bonus2" parent="." instance=ExtResource("4_dsbxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.37397, -2.01908, -33.8444)
+script = null
 
 [node name="Bonus3" parent="." instance=ExtResource("4_dsbxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.244681, -2.01908, -40.5965)
+script = null
 
 [node name="Bonus4" parent="." instance=ExtResource("4_dsbxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71109, -2.01908, -25.1151)
+script = null
 
 [connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
 [connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car2" to="GridContainer/SubViewportContainer2/SubViewport/car2" method="_on_body_entered"]
