@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://daf68dab700ad"]
+
+[ext_resource type="PackedScene" uid="uid://duy0dbkychify" path="res://cars/BaseCar.tscn" id="1_lymph"]
+[ext_resource type="PackedScene" uid="uid://benmjny2guowm" path="res://cars/Models/Doge/Wheel.glb" id="2_stfoh"]
+[ext_resource type="Script" path="res://cars/collision_shape_3d.gd" id="3_d1dwl"]
+[ext_resource type="PackedScene" uid="uid://bty2rpvw2dh0h" path="res://cars/Models/Doge/doge-body.glb" id="4_co4uo"]
+[ext_resource type="PackedScene" uid="uid://d0bygn1bicolh" path="res://HealthBar/HealthBar.tscn" id="5_f7x7k"]
+[ext_resource type="PackedScene" uid="uid://bijvm8okldfwr" path="res://assets/models/cars/car1/car_1.tscn" id="6_m6ej1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n7qdn"]
+radius = 0.291194
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xaafv"]
+size = Vector3(0.542114, 1.7092, 1.53265)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7kmqy"]
+radius = 0.363529
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2ynea"]
+viewport_path = NodePath("SubViewport")
+
+[node name="car" groups=["car"] instance=ExtResource("1_lymph")]
+contact_monitor = true
+max_contacts_reported = 2
+STEER_LIMIT = 0.4
+engine_force_value = 50
+
+[node name="wheal0" parent="." index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.768343, 0.340338, -1.21291)
+wheel_radius = 0.37
+wheel_rest_length = 0.095
+suspension_travel = 0.357
+
+[node name="Wheel" parent="wheal0" index="0" instance=ExtResource("2_stfoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142656, 0, 0)
+
+[node name="wheal1" parent="." index="1"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.785292, 0.34, -1.213)
+wheel_radius = 0.37
+wheel_rest_length = 0.095
+suspension_travel = 0.357
+
+[node name="Wheel" parent="wheal1" index="0" instance=ExtResource("2_stfoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0775136, 0, 0)
+
+[node name="wheal2" parent="." index="2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.768, 0.287, 1.264)
+wheel_radius = 0.37
+wheel_rest_length = 0.095
+suspension_travel = 0.357
+
+[node name="Wheel" parent="wheal2" index="0" instance=ExtResource("2_stfoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142656, 0, 0)
+
+[node name="wheal3" parent="." index="3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.785, 0.287, 1.264)
+wheel_radius = 0.37
+wheel_rest_length = 0.095
+suspension_travel = 0.357
+
+[node name="Wheel" parent="wheal3" index="0" instance=ExtResource("2_stfoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0775136, 0, 0)
+
+[node name="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1.1, 0, 0, 0, 2.2, 0, 0, 0, 1.1, 0.0026385, 1.40556, -0.0407702)
+script = ExtResource("3_d1dwl")
+
+[node name="Camera3D" parent="look" index="0"]
+fov = 80.0
+target_distance = 5
+
+[node name="Label" parent="Hud" index="1"]
+text = "Player 1!
+"
+uppercase = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(-9.61651e-08, -1.35, 0, 2.2, -5.90104e-08, 0, 0, 0, 2, 0, 1.01366, -1.42507)
+shape = SubResource("CapsuleShape3D_n7qdn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="8"]
+transform = Transform3D(-8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0, 0, 1, 0, 1.065, -1.11)
+shape = SubResource("BoxShape3D_xaafv")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="9"]
+transform = Transform3D(-9.61651e-08, -1.35, 0, 2.2, -5.90104e-08, 0, 0, 0, 2, -0.000778168, 1.08009, 1.4477)
+shape = SubResource("CapsuleShape3D_7kmqy")
+
+[node name="doge-body" parent="." index="10" instance=ExtResource("4_co4uo")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+
+[node name="SubViewport" type="SubViewport" parent="." index="11"]
+disable_3d = true
+transparent_bg = true
+
+[node name="HealthBar" parent="SubViewport" index="0" instance=ExtResource("5_f7x7k")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="12"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.95641, 0)
+texture = SubResource("ViewportTexture_2ynea")
+
+[node name="car1" parent="." index="13" instance=ExtResource("6_m6ej1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.75, 0)

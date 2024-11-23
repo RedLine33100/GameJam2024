@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bijvm8okldfwr"]
+
+[ext_resource type="PackedScene" uid="uid://sepbbnnx76kd" path="res://assets/models/cars/car1/car1.blend" id="1_5267o"]
+
+[node name="car1" instance=ExtResource("1_5267o")]
+
+[node name="Light" parent="." index="1"]
+visible = false
+
+[node name="Cylinder" parent="." index="3"]
+visible = false
+
+[node name="Cylinder_001" parent="." index="4"]
+visible = false
+
+[node name="Cylinder_002" parent="." index="5"]
+visible = false
+
+[node name="Cylinder_003" parent="." index="6"]
+visible = false
