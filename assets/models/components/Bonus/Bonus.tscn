@@ -13,8 +13,8 @@ inner_radius = 0.6
 rings = 5
 ring_segments = 3
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_msyjf"]
-size = Vector3(1.70605, 1.631, 0.348387)
+[sub_resource type="BoxShape3D" id="BoxShape3D_yllyt"]
+size = Vector3(1.99213, 1.99945, 1.49408)
 
 [node name="Bonus" type="Node3D"]
 script = ExtResource("1_1fiew")
@@ -22,15 +22,14 @@ script = ExtResource("1_1fiew")
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+[node name="SonicRing" type="MeshInstance3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 visible = false
 mesh = SubResource("TorusMesh_yaqe0")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00318359, 0.0899124, 1.04904e-05)
-shape = SubResource("BoxShape3D_msyjf")
+shape = SubResource("BoxShape3D_yllyt")
 
 [node name="sb_box" parent="Area3D" instance=ExtResource("2_57dpq")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
