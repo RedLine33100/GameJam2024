@@ -10,14 +10,18 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	start_button.button_down.connect(on_start_pressed)
-	option_button.button_down.connect(on_options_pressed)
-	quit_button.button_down.connect(on_quit_pressed)
-	options_menu.quit_options_menu.connect(on_quit_options_menu)
+	bind_buttons()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+
+func bind_buttons() -> void:
+	start_button.button_down.connect(on_start_pressed)
+	option_button.button_down.connect(on_options_pressed)
+	quit_button.button_down.connect(on_quit_pressed)
+	options_menu.quit_options_menu.connect(on_quit_options_menu)
 	
 func on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(start_level)
