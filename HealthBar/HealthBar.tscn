@@ -1,6 +1,14 @@
-[gd_scene format=3 uid="uid://d0bygn1bicolh"]
+[gd_scene load_steps=3 format=3 uid="uid://d0bygn1bicolh"]
 
-[node name="ProgressBar" type="ProgressBar"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqoaq"]
+bg_color = Color(0, 0.217548, 1.20327e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rwig"]
+bg_color = Color(0.283333, 1, 0, 1)
+border_width_right = 6
+border_color = Color(0, 0, 0, 1)
+
+[node name="HealthBar" type="ProgressBar"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -14,5 +22,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-value = 50.0
+theme_override_styles/background = SubResource("StyleBoxFlat_cqoaq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2rwig")
+max_value = 10.0
+value = 5.0
 show_percentage = false

@@ -2,7 +2,7 @@ extends Node3D
 
 @export var speed = 50.0  # Vitesse du projectile
 @export var lifetime = 2.0  # Durée de vie en secondes
-@export var damage = 5.0
+@export var damage = 1.0
 var direction = Vector3.ZERO  # Direction de déplacement
 
 # Called when the node enters the scene tree for the first time.
@@ -22,5 +22,7 @@ func _physics_process(delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	print("Collision détectée avec :", body.name)
 	# Détruire le projectile si un corps est touché
-	queue_free()
+	if body.is_in_group("car"):
+		body.damage(damage)
+		queue_free()
 	pass # Replace with function body.

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci52bv1m15cbs"]
+[gd_scene load_steps=10 format=3 uid="uid://ci52bv1m15cbs"]
 
 [ext_resource type="PackedScene" uid="uid://duy0dbkychify" path="res://cars/BaseCar.tscn" id="1_cfkas"]
 [ext_resource type="PackedScene" uid="uid://benmjny2guowm" path="res://cars/Models/Doge/Wheel.glb" id="2_eoiid"]
 [ext_resource type="Script" path="res://cars/collision_shape_3d.gd" id="3_gkqu7"]
 [ext_resource type="PackedScene" uid="uid://bty2rpvw2dh0h" path="res://cars/Models/Doge/doge-body.glb" id="3_om8jj"]
+[ext_resource type="PackedScene" uid="uid://d0bygn1bicolh" path="res://HealthBar/HealthBar.tscn" id="5_nsqx2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n7qdn"]
 radius = 0.291194
@@ -14,7 +15,10 @@ size = Vector3(0.542114, 1.7092, 1.53265)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7kmqy"]
 radius = 0.363529
 
-[node name="car" instance=ExtResource("1_cfkas")]
+[sub_resource type="ViewportTexture" id="ViewportTexture_2ynea"]
+viewport_path = NodePath("SubViewport")
+
+[node name="car" groups=["car"] instance=ExtResource("1_cfkas")]
 contact_monitor = true
 max_contacts_reported = 2
 STEER_LIMIT = 0.4
@@ -78,3 +82,13 @@ shape = SubResource("CapsuleShape3D_7kmqy")
 
 [node name="doge-body" parent="." index="10" instance=ExtResource("3_om8jj")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="SubViewport" type="SubViewport" parent="." index="11"]
+disable_3d = true
+transparent_bg = true
+
+[node name="HealthBar" parent="SubViewport" index="0" instance=ExtResource("5_nsqx2")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="12"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.99975, 0)
+texture = SubResource("ViewportTexture_2ynea")

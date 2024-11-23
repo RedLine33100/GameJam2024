@@ -8,7 +8,11 @@ var steer_target = 0
 @export var default_life : int = 10
 var life : int = 0
 
+
+
 func _ready() -> void:
+	$SubViewport/HealthBar.max_value = default_life
+	$SubViewport/HealthBar.value = default_life
 	life = default_life
 
 @export var projectile_scene = load("res://Projectile/Projectile.tscn")
@@ -90,6 +94,7 @@ func traction(speed):
 	
 func damage(damage: int):
 	life-=damage
+	$SubViewport/HealthBar.value = life
 	if(life>0):
 		return
 	self.visible = false
