@@ -20,9 +20,10 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="Sons" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -103,7 +104,6 @@ size_flags_horizontal = 3
 value = 50.0
 
 [node name="Controles" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -127,23 +127,26 @@ columns = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 24
-
-[node name="Label" type="Label" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer"]
-layout_mode = 2
-text = "Déplacements"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 text = "Avancer
 "
 
-[node name="TextEdit" type="TextEdit" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextEdit" type="TextEdit" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z"
@@ -152,12 +155,20 @@ scroll_fit_content_height = true
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label2" type="Label" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 text = "Ralentir
 "
 
-[node name="TextEdit" type="TextEdit" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextEdit" type="TextEdit" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer2/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "S"
@@ -166,58 +177,46 @@ scroll_fit_content_height = true
 [node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer3"]
+[node name="Label3" type="Label" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 text = "Tourner à droite
 "
 
-[node name="TextEdit" type="TextEdit" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "D"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextEdit" type="TextEdit" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Z"
 scroll_fit_content_height = true
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer4"]
+[node name="Label4" type="Label" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 text = "Tourner à gauche
 "
 
-[node name="TextEdit" type="TextEdit" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Q"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextEdit" type="TextEdit" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer/HBoxContainer4/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Z"
 scroll_fit_content_height = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer"]
+[node name="VSeparator" type="VSeparator" parent="TabContainer/Controles/MarginContainer/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 24
-
-[node name="Label" type="Label" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Autres"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-text = "Options
-"
-
-[node name="TextEdit" type="TextEdit" parent="TabContainer/Controles/MarginContainer/GridContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "echap"
-scroll_fit_content_height = true
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Controles/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
