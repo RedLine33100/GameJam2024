@@ -19,8 +19,11 @@ var last_barrier_position = Vector3.ZERO
 @export var max_repulsion_force: float = 100.0  # Maximum repulsion force
 
 @export var default_life : int = 100
-var life : int = 0
 
+#@export var default_life : int = 10
+@export var life : int = 0
+
+	
 @onready var engine_sound = $EngineSound as AudioStreamPlayer
 
 func _ready() -> void:
