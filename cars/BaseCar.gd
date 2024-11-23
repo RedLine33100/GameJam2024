@@ -1,6 +1,5 @@
 extends VehicleBody3D
 
-
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.6
 var steer_target = 0
@@ -12,6 +11,29 @@ var life : int = 0
 func _ready() -> void:
 	life = default_life
 
+@export var projectile_scene = load("res://Projectile/Projectile.tscn")
+func shoot():
+	if projectile_scene:
+		var projectile = projectile_scene.instantiate()
+		# Positionner le projectile à l'avant de la voiture
+		projectile.transform = Transform3D(transform.basis, transform.origin)
+		# Ajouter le projectile à la scène
+		get_parent().add_child(projectile)
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		shoot()
+
+@export var spawnBarrier = false
+@export var barrier_scene = load("res://Barrier/Barrier.tscn")
+var last_barrier_position = Vector3.ZERO
+@export var barrier_spacing = 1.0  # Distance minimale entre deux barrières
+func spawn_barrier():
+	if barrier_scene:
+		var barrier = barrier_scene.instantiate()
+		barrier.transform = Transform3D(transform.basis, transform.origin)  # Positionner la barrière
+		get_parent().add_child(barrier)
+
 func getTouch(touch):
 	if player_number == 1:
 		return "ui_"+touch
@@ -21,6 +43,12 @@ func _physics_process(delta):
 	var speed = linear_velocity.length()*Engine.get_frames_per_second()*delta
 	traction(speed)
 	$Hud/speed.text=str(round(speed*3.8))+"  KMPH"
+	
+	if spawnBarrier:
+		# Ajouter une barrière si assez de distance a été parcourue
+		if (transform.origin - last_barrier_position).length() > barrier_spacing:
+			spawn_barrier()
+			last_barrier_position = transform.origin
 
 	var fwd_mps = transform.basis.x.x
 	steer_target = Input.get_action_strength(getTouch("left")) - Input.get_action_strength(getTouch("right"))
