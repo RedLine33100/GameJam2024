@@ -12,10 +12,6 @@ extends Control
 func _ready() -> void:
 	bind_buttons()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func bind_buttons() -> void:
 	start_button.button_down.connect(on_start_pressed)
 	option_button.button_down.connect(on_options_pressed)

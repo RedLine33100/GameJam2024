@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgnr7nmxjybwm"]
+[gd_scene load_steps=7 format=3 uid="uid://cgnr7nmxjybwm"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_005ci"]
 [ext_resource type="PackedScene" uid="uid://jh2l8dfkng6d" path="res://scenes/car.tscn" id="2_5nuvn"]
 [ext_resource type="PackedScene" uid="uid://bj04gl2cjqbou" path="res://scenes/option_menu/option_menu.tscn" id="2_pd41a"]
 [ext_resource type="Texture2D" uid="uid://iv5gx2ienba0" path="res://assets/images/Kart_Crous.png" id="2_twuw2"]
+[ext_resource type="Texture2D" uid="uid://cswi8vnpcbbq8" path="res://assets/ui/chefphoto-02_R.png" id="3_w41tr"]
+[ext_resource type="Texture2D" uid="uid://byiyto3bcoidb" path="res://assets/ui/logo_izly_big.png" id="4_0lc1i"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -17,9 +19,18 @@ start_level = ExtResource("2_5nuvn")
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -796.0
+offset_top = -605.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_w41tr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -35,27 +46,12 @@ theme_override_constants/margin_bottom = 12
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 layout_mode = 2
-columns = 2
+columns = 3
 
 [node name="VBoxContainer2" type="GridContainer" parent="MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/GridContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 60
-
-[node name="Label" type="Label" parent="MarginContainer/GridContainer/VBoxContainer2/VBoxContainer"]
-visible = false
-layout_mode = 2
-theme_override_constants/outline_size = 12
-theme_override_font_sizes/font_size = 35
-text = "GAME TITLE (replace with the logo)
-"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/GridContainer/VBoxContainer2"]
 layout_mode = 2
@@ -66,6 +62,13 @@ alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 18
 alignment = 1
+
+[node name="Logo2" type="TextureRect" parent="MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource("4_0lc1i")
+stretch_mode = 5
 
 [node name="Seperator2" type="Control" parent="MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -95,9 +98,15 @@ theme_override_font_sizes/font_size = 40
 text = "QUITTER
 "
 
-[node name="Logo" type="TextureRect" parent="MarginContainer/GridContainer"]
+[node name="VBoxContainer3" type="GridContainer" parent="MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
 texture = ExtResource("2_twuw2")
 expand_mode = 4
 stretch_mode = 5
