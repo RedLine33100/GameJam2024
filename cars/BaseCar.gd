@@ -17,7 +17,15 @@ var last_barrier_position = Vector3.ZERO
 var steer_target = 0
 var life : int = 0
 
+
+	
+@onready var engine_sound = $EngineSound as AudioStreamPlayer
+
 func _ready() -> void:
+	$SubViewport/HealthBar.max_value = default_life
+	$SubViewport/HealthBar.value = default_life
+	engine_sound.play()
+	
 	life = default_life
 
 func shoot():
@@ -29,7 +37,7 @@ func shoot():
 		get_parent().add_child(projectile)
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed(getTouch("croix")):
 		shoot()
 
 func spawn_barrier():
@@ -59,13 +67,16 @@ func _physics_process(delta):
 	steer_target *= STEER_LIMIT
 	if Input.is_action_pressed(getTouch("down")):
 	# Increase engine force at low speeds to make the initial acceleration faster.
-
+		
 		if speed < 20 and speed != 0:
 			engine_force = clamp(engine_force_value * 3 / speed, 0, 300)
 		else:
 			engine_force = engine_force_value
+			
 	else:
 		engine_force = 0
+		
+			
 	if Input.is_action_pressed(getTouch("up")):
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		if fwd_mps >= -1:
@@ -78,6 +89,10 @@ func _physics_process(delta):
 	else:
 		brake = 0.0
 		
+	var max_speed = 200
+	# Ou utilisez volume linéaire
+	engine_sound.volume_db = min(30, speed*3.8*30 / max_speed)
+		
 	if Input.is_action_pressed(getTouch("select")):
 		brake=3
 		$wheal2.wheel_friction_slip=0.8
@@ -89,6 +104,7 @@ func _physics_process(delta):
 
 func damage(damage: int):
 	life-=damage
+	$SubViewport/HealthBar.value = life
 	if(life>0):
 		return
 	self.visible = false
@@ -118,8 +134,8 @@ func _on_body_entered(body: Node):
 		var relative_velocity = (linear_velocity - (body.linear_velocity if body.has_method("get_linear_velocity") else Vector3.ZERO)).length()
 		
 		# Calculate damage
-		var damage = base_damage + frontal_damage_multiplier * relative_velocity
-		body.damage(damage)
+		var dmgValue = base_damage + frontal_damage_multiplier * relative_velocity
+		body.damage(dmgValue)
 		# Apply repulsion based on the collided object's "life"
 		var resLife = body.life  # Get the life value of the collided object
 		var repulsion_force = max_repulsion_force * (1.0 - (resLife / 100.0))  # Scale force by life percentage

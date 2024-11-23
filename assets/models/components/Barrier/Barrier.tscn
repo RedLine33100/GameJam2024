@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bar3fqmpwcwwn"]
+
+[ext_resource type="Script" path="res://assets/models/components/Barrier/Barrier.gd" id="1_ofmr6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b348j"]
+size = Vector3(0.103973, 1.98718, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xkx2"]
+transparency = 1
+albedo_color = Color(0.1681, 0.317272, 0.41, 0.72549)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ssi6r"]
+material = SubResource("StandardMaterial3D_7xkx2")
+
+[node name="Barrier" type="Node3D"]
+script = ExtResource("1_ofmr6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00138855, 0.996033, 3)
+shape = SubResource("BoxShape3D_b348j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+physics_interpolation_mode = 1
+transform = Transform3D(0.1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 3)
+mesh = SubResource("BoxMesh_ssi6r")
