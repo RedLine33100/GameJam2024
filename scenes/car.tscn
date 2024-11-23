@@ -59,7 +59,7 @@ size = Vector2i(574, 648)
 render_target_update_mode = 4
 
 [node name="car" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_lr3vj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.947963, 0.184, -6.309)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29, 15, 0)
 STEER_SPEED = 1.0
 STEER_LIMIT = 0.15
 engine_force_value = 200
@@ -80,11 +80,11 @@ size = Vector2i(574, 648)
 render_target_update_mode = 4
 
 [node name="car" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("5_gf57a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91431, 0, -6.79234)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29, 15, 0)
+player_number = 2
 STEER_SPEED = 1.0
 STEER_LIMIT = 0.15
 engine_force_value = 200
-player_number = 2
 
 [node name="EngineSound" type="AudioStreamPlayer" parent="GridContainer/SubViewportContainer2/SubViewport/car"]
 stream = ExtResource("3_yo4ry")
@@ -97,19 +97,10 @@ autoplay = true
 parameters/looping = true
 
 [node name="sb_arena2" parent="." instance=ExtResource("7_k37vi")]
-transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.31414, -5.99625, -25.283)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
 [node name="Bonus" parent="." instance=ExtResource("4_dsbxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1825, -2.05175, -32.028)
-
-[node name="Bonus2" parent="." instance=ExtResource("4_dsbxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3661, -2.05175, -37.205)
-
-[node name="Bonus3" parent="." instance=ExtResource("4_dsbxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6741, -2.05175, -13.6151)
-
-[node name="Bonus4" parent="." instance=ExtResource("4_dsbxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05043, -2.05175, 9.34626)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -2.5)
 
 [connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
 [connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car" to="GridContainer/SubViewportContainer2/SubViewport/car" method="_on_body_entered"]

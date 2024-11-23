@@ -1,39 +1,37 @@
 extends VehicleBody3D
 
+@export var player_number = 1
+
 @export var STEER_SPEED = 1.5
 @export var STEER_LIMIT = 0.6
 @export var engine_force_value = 40
-@export var player_number = 1
-@export var default_life : int = 100
+var steer_target = 0
+
+@export var projectile_scene : Resource
 @export var spawnBarrier = false
 @export var barrier_scene : Resource
 @export var barrier_spacing = 1.0  # Distance minimale entre deux barrières
+var last_barrier_position = Vector3.ZERO
+
 # Damage multiplier for frontal collisions
 @export var frontal_damage_multiplier: float = 1.5
 @export var base_damage: float = 10.0
 @export var max_repulsion_force: float = 100.0  # Maximum repulsion force
-@export var projectile_scene : Resource
-var last_barrier_position = Vector3.ZERO
-var steer_target = 0
+
+@export var default_life : int = 100
 var life : int = 0
 
-
-	
 @onready var engine_sound = $EngineSound as AudioStreamPlayer
 
 func _ready() -> void:
 	$SubViewport/HealthBar.max_value = default_life
 	$SubViewport/HealthBar.value = default_life
-	#engine_sound.play()
-	
 	life = default_life
 
 func shoot():
 	if projectile_scene:
 		var projectile = projectile_scene.instantiate()
-		# Positionner le projectile à l'avant de la voiture
 		projectile.transform = Transform3D(transform.basis, transform.origin)
-		# Ajouter le projectile à la scène
 		get_parent().add_child(projectile)
 
 func _process(delta):
@@ -43,7 +41,7 @@ func _process(delta):
 func spawn_barrier():
 	if barrier_scene:
 		var barrier = barrier_scene.instantiate()
-		barrier.transform = Transform3D(transform.basis, transform.origin)  # Positionner la barrière
+		barrier.transform = Transform3D(transform.basis, transform.origin)
 		get_parent().add_child(barrier)
 
 func getTouch(touch):
@@ -113,10 +111,7 @@ func damage(damage: int):
 	$SubViewport/HealthBar.value = life
 	if(life>0):
 		return
-	self.visible = false
-	var layer = 2
-	self.collision_layer &= ~(1 << layer)
-	self.collision_mask &= ~(1 << layer)
+	
 
 func traction(speed):
 	apply_central_force(Vector3.DOWN*speed)
