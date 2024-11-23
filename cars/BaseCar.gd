@@ -5,6 +5,11 @@ extends VehicleBody3D
 var steer_target = 0
 @export var engine_force_value = 40
 @export var player_number = 1
+@export var default_life : int = 10
+var life : int = 0
+
+func _ready() -> void:
+	life = default_life
 
 @export var projectile_scene = load("res://Projectile/Projectile.tscn")
 func shoot():
@@ -82,3 +87,54 @@ func _physics_process(delta):
 
 func traction(speed):
 	apply_central_force(Vector3.DOWN*speed)
+	
+func damage(damage: int):
+	life-=damage
+	if(life>0):
+		return
+	self.visible = false
+	var layer = 2
+	self.collision_layer &= ~(1 << layer)
+	self.collision_mask &= ~(1 << layer)
+
+# Function to calculate the angle between the two cars' orientation vectors
+func calculate_impact_angle(other_car: VehicleBody3D) -> float:
+	# Get the forward direction of the current car and the other car
+	var car_forward = transform.basis.z.normalized()  # Direction car is facing
+	var other_car_forward = other_car.transform.basis.z.normalized()  # Direction other car is facing
+	
+	# Calculate the dot product between the two direction vectors
+	var dot_product = car_forward.dot(other_car_forward)
+	
+	# The angle is the arccosine of the dot product
+	var angle = rad_to_deg(acos(dot_product))  # Convert radians to degrees
+	return angle
+
+# Function to calculate damage based on collision velocity and angle
+func calculate_damage(collision_velocity: float, angle_of_impact: float) -> int:
+	var max_damage = 100  # Maximum possible damage
+	var base_damage = collision_velocity * 0.5  # Base damage proportional to collision velocity
+	
+	# Adjust damage based on the angle of impact (0 degrees is head-on)
+	var angle_factor = 1.0 - (angle_of_impact / 180.0)  # Scale damage between 0 (side impact) to 1 (head-on)
+	
+	# Final damage is base damage multiplied by the angle factor
+	var damage = base_damage * angle_factor
+	
+	# Ensure damage doesn't exceed max_damage
+	return int(min(damage, max_damage))
+
+func _on_body_entered(testBody: Node) -> void:
+	if not testBody is VehicleBody3D:
+		return;
+	var body : VehicleBody3D = testBody
+	# Calculate relative velocity at the point of collision
+	var collision_velocity = (linear_velocity - body.linear_velocity).length()
+	# Apply damage based on the collision velocity
+	var damage = calculate_damage(collision_velocity, calculate_impact_angle(body))
+	# Reduce health by the calculated damage
+	var health = damage
+	# Print out the damage and health status
+	print("P "+str(player_number)+" f Collision Damage: ", damage)
+	print("P "+str(player_number)+" fRemaining Health: ", health)
+	body.damage(damage)
