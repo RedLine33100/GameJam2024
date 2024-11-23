@@ -143,7 +143,9 @@ size_flags_vertical = 3
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer2"]
+handle_input_locally = false
 size = Vector2i(574, 648)
+render_target_update_mode = 4
 
 [node name="car2" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("1_mdet3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564415, 0.184314, -6.30866)
