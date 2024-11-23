@@ -4,7 +4,7 @@ extends Control
 @onready var start_button = $MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Start_Button as Button
 @onready var option_button = $MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Option_Button as Button
 @onready var quit_button = $MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Quit_Button as Button
-@onready var start_level = preload("res://scenes/main/main.tscn") as PackedScene
+@onready var start_level = preload("res://car.tscn") as PackedScene
 @onready var options_menu = $Option_Menu as OptionsMenu
 @onready var margin_container = $MarginContainer as MarginContainer
 
