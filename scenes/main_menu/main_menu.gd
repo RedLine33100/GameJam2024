@@ -15,7 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+	"res://scenes/main_menu/main_menu.tscn"
 
 func bind_buttons() -> void:
 	start_button.button_down.connect(on_start_pressed)
