@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://jh2l8dfkng6d"]
+[gd_scene load_steps=14 format=3 uid="uid://jh2l8dfkng6d"]
 
-[ext_resource type="Texture2D" uid="uid://doskmpsk8cak8" path="res://assets/images/SkyBox/M3_Anime_equirectangular-png_Low_poly_skybox_of_223829484_12506313.png" id="1_r7bup"]
+[ext_resource type="Script" path="res://scenes/car.gd" id="1_hq1yg"]
+[ext_resource type="Texture2D" uid="uid://chkq5mkr8xgjq" path="res://assets/images/Skybox v2.png" id="1_vdsol"]
 [ext_resource type="PackedScene" uid="uid://da85hnowf7dbb" path="res://assets/models/cars/CrousCar1.tscn" id="3_lr3vj"]
 [ext_resource type="AudioStream" uid="uid://bxssu420u6obo" path="res://assets/audio/car-engine-start-outside-72279.mp3" id="3_yo4ry"]
 [ext_resource type="AudioStream" uid="uid://163g77ot12kq" path="res://assets/audio/ambient-piano-logo-165357.mp3" id="4_551gq"]
@@ -87,7 +88,7 @@ size = Vector2i(574, 648)
 render_target_update_mode = 4
 
 [node name="car" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("3_lr3vj")]
-transform = Transform3D(-0.048013, 0, 0.998847, 0, 1, 0, -0.998847, 0, -0.048013, 29.4217, 15.0306, 0)
+transform = Transform3D(0.0264736, 0, 0.99965, 0, 1, 0, -0.99965, 0, 0.0264736, 29.725, 15.01, 0)
 player_number = 2
 
 [node name="EngineSound" type="AudioStreamPlayer" parent="GridContainer/SubViewportContainer2/SubViewport/car"]
