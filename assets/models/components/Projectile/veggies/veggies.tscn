@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://ysllbth4tx6j"]
+[gd_scene load_steps=13 format=3 uid="uid://ysllbth4tx6j"]
 
 [ext_resource type="PackedScene" uid="uid://bexnn7783yvi" path="res://assets/models/components/Projectile/veggies/veggies.blend" id="1_ui5qh"]
 [ext_resource type="Texture2D" uid="uid://dvaytdb1q0xf4" path="res://assets/models/components/Projectile/veggies/textures/Eggplant_Jalapeno_Cucumber.png" id="2_ei5q6"]
+[ext_resource type="Script" path="res://assets/models/components/Projectile/Proj.gd" id="2_j12wt"]
 [ext_resource type="Texture2D" uid="uid://bddrf44363b2" path="res://assets/models/components/Projectile/veggies/textures/Carrot_Lettuce_Brocoli.png" id="3_yqgfo"]
 [ext_resource type="Texture2D" uid="uid://66xyn4q7wqh0" path="res://assets/models/components/Projectile/veggies/textures/Potato_Onion_Tomato_Pepper.png" id="4_gcmfa"]
 [ext_resource type="Texture2D" uid="uid://bin2417p45fbv" path="res://assets/models/components/Projectile/veggies/textures/Bellpeppers.png" id="5_2ertp"]
@@ -25,24 +26,40 @@ albedo_texture = ExtResource("4_gcmfa")
 albedo_texture = ExtResource("5_2ertp")
 
 [node name="veggies" instance=ExtResource("1_ui5qh")]
+script = ExtResource("2_j12wt")
 
 [node name="Light" parent="." index="0"]
 visible = false
 
+[node name="Camera" parent="." index="1"]
+visible = false
+
 [node name="Eggplant" parent="." index="2"]
+transform = Transform3D(0.176664, 0.000386182, -0.040074, -0.0127393, 0.172289, -0.0545002, 0.0379972, 0.055968, 0.168047, 0, 1, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_m0en2")
 
 [node name="Lettuce" parent="." index="3"]
+transform = Transform3D(0.135596, 0.028855, 0, -0.028855, 0.135596, 0, 0, 0, 0.138632, 0, 1, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_m1huk")
 
 [node name="Tomato" parent="." index="4"]
+transform = Transform3D(-0.0793429, 0.175933, 0.545609, 0.202668, 0.52385, -0.139445, -0.536254, 0.171949, -0.133428, 0, 1, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_t6vr1")
 
 [node name="Onion_Yellow" parent="." index="5"]
+transform = Transform3D(0.578738, 0, 0, 0, 0.531724, -0.228489, 0, 0.228489, 0.531724, 0, 1, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_6lv7p")
 
 [node name="Potato_Red_001" parent="." index="6"]
+transform = Transform3D(0.572898, -0.0820103, 0, 0.0820103, 0.572898, 0, 0, 0, 0.578738, 0, 1, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_kfbiw")
 
 [node name="Bell_Pepper" parent="." index="7"]
+transform = Transform3D(0.226898, -0.025094, -0.274504, -0.0851559, 0.331767, -0.100717, 0.262165, 0.129482, 0.204863, 0, 1, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_hvf12")
