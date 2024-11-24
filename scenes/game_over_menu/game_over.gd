@@ -1,7 +1,7 @@
 extends Control
 
-@onready var quit_button = $MarginContainer/VBoxContainer/Quit_Button as Button
-@onready var mainmenu_button = $MarginContainer/VBoxContainer/MainMenu_Button as Button
+@onready var quit_button = $MarginContainer/VBoxContainer2/Quit_Button as Button
+@onready var mainmenu_button = $MarginContainer/VBoxContainer2/MainMenu_Button as Button
 @onready var winner_label = $MarginContainer/VBoxContainer/WinnerLabel as Label
 @onready var mainMenu = preload("res://scenes/main_menu/main_menu.tscn") as PackedScene
 @onready var game_scene = preload("res://scenes/car.tscn") as PackedScene
