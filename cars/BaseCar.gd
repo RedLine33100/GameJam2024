@@ -44,6 +44,9 @@ func _ready() -> void:
 	add_child(instance)
 	instance.scale = Vector3(2, 2, 2)
 	instance.position = Vector3(0,1.5,0)
+	
+	$Hud/Label.text = "Joueur "+str(player_number)
+	
 
 func shoot():
 	if shootActivate:
