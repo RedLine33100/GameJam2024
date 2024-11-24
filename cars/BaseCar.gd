@@ -56,8 +56,11 @@ func shoot():
 		get_parent().add_child(projectile)
 
 func _process(delta):
+	if (Global.paused):
+		return
 	if Input.is_action_just_pressed(getTouch("croix")):
 		shoot()
+	
 	# 10 secondes
 	if(countTimeBonus < 0.0):
 		bonusLabel.text = "Aucun bonus"
@@ -90,6 +93,8 @@ func getTouch(touch):
 	return "ui_"+touch+"_p"+str(player_number)
 
 func _physics_process(delta):
+	if (Global.paused):
+		return
 	var speed = linear_velocity.length()*Engine.get_frames_per_second()*delta
 	traction(speed)
 	$Hud/speed.text=str(round(speed*3.8))+"  KMPH"

@@ -9,6 +9,7 @@
 [ext_resource type="Theme" path="res://assets/ui/button_theme.tres" id="5_tfvuk"]
 
 [node name="Main_Menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
