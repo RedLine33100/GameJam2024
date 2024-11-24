@@ -16,8 +16,8 @@ func bind_buttons() -> void:
 	start_button.button_down.connect(on_start_pressed)
 	option_button.button_down.connect(on_options_pressed)
 	quit_button.button_down.connect(on_quit_pressed)
-	options_menu.return_options_main_menu.connect(on_start_pressed)
-	#options_menu.quit_options_menu.connect(on_quit_options_menu)
+	options_menu.return_options_main_menu.connect(on_quit_options_menu)
+	options_menu.quit_options_menu.connect(on_quit_options_menu)
 	
 func on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(start_level)

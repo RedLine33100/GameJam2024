@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://beg5my3ktcd66" path="res://assets/ui/victory_screen/effet.png" id="2_snt1n"]
 [ext_resource type="Texture2D" uid="uid://dsvq847x2gg57" path="res://assets/ui/victory_screen/ruban_complete.png" id="3_tbnqp"]
 [ext_resource type="FontFile" uid="uid://u0i0grxa025s" path="res://assets/ui/MYRIADPRO-BOLD.OTF" id="4_jrxaf"]
-[ext_resource type="Theme" uid="uid://dhfhx0etsflxs" path="res://assets/ui/button_theme.tres" id="5_8wjx6"]
+[ext_resource type="Theme" path="res://assets/ui/button_theme.tres" id="5_8wjx6"]
 
 [sub_resource type="Animation" id="Animation_iswex"]
 length = 0.001
