@@ -114,6 +114,9 @@ func damage(damage: int):
 	$SubViewport/HealthBar.value = life
 	if(life>0):
 		return
+
+func set_life(value: int):
+	life = value
 	
 
 func traction(speed):

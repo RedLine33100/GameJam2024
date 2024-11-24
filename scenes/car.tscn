@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://jh2l8dfkng6d"]
+[gd_scene load_steps=15 format=3 uid="uid://jh2l8dfkng6d"]
 
+[ext_resource type="Script" path="res://scenes/car.gd" id="1_hq1yg"]
 [ext_resource type="Texture2D" uid="uid://chkq5mkr8xgjq" path="res://assets/images/Skybox v2.png" id="1_vdsol"]
 [ext_resource type="PackedScene" uid="uid://daf68dab700ad" path="res://assets/models/cars/CrousCar1.tscn" id="3_lr3vj"]
 [ext_resource type="AudioStream" uid="uid://bxssu420u6obo" path="res://assets/audio/car-engine-start-outside-72279.mp3" id="3_yo4ry"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://3h38kou5514b" path="res://assets/models/cars/CrousCar2.tscn" id="5_gf57a"]
 [ext_resource type="PackedScene" uid="uid://l7g16loalw6l" path="res://assets/models/arena/sb_arena_2.tscn" id="7_k37vi"]
 [ext_resource type="PackedScene" uid="uid://l76h7nw8dhg6" path="res://assets/models/gradins/gradin.tscn" id="8_d4kkm"]
+[ext_resource type="Script" path="res://assets/models/death_plane/death_plane.gd" id="9_o73sp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_k67ct"]
 panorama = ExtResource("1_vdsol")
@@ -30,7 +32,11 @@ glow_enabled = true
 fog_mode = 1
 fog_density = 1.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yw1le"]
+size = Vector3(2876.73, 10.4848, 3202.44)
+
 [node name="Main" type="Node3D"]
+script = ExtResource("1_hq1yg")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8dxyn")
@@ -111,5 +117,14 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 86.6229, -14.9676, -13.087
 [node name="gradin2" parent="." instance=ExtResource("8_d4kkm")]
 transform = Transform3D(-20, 0, -1.74846e-06, 0, 20, 0, 1.74846e-06, 0, -20, -97.1389, -14.9676, -43.6947)
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21.8108, 0)
+script = ExtResource("9_o73sp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.94009, -0.347015, -9.96048)
+shape = SubResource("BoxShape3D_yw1le")
+
 [connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
 [connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car" to="GridContainer/SubViewportContainer2/SubViewport/car" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
