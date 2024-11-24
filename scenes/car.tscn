@@ -108,10 +108,10 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -2.5)
 
 [node name="gradin" parent="." instance=ExtResource("8_d4kkm")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 86.6229, -14.9676, -13.0873)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 86.6229, 2.54698, -13.0873)
 
 [node name="gradin2" parent="." instance=ExtResource("8_d4kkm")]
-transform = Transform3D(-20, 0, -1.74846e-06, 0, 20, 0, 1.74846e-06, 0, -20, -97.1389, -14.9676, -43.6947)
+transform = Transform3D(-20, 0, -1.74846e-06, 0, 20, 0, 1.74846e-06, 0, -20, -97.1389, 2.54698, -43.6947)
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21.8108, 0)
