@@ -144,9 +144,9 @@ func heal(amount: int):
 
 func damage(damage: int):
 	life -= damage
+	if(life<0):
+		life = 0
 	$SubViewport/HealthBar.value = life
-	if(life>0):
-		return
 
 func set_life(value: int):
 	life = value
@@ -182,18 +182,15 @@ func _on_body_entered(body: Node):
 		
 		# Apply repulsion impulse
 		if body is RigidBody3D:
-			var nf = (collision_normal * repulsion_force) * 10
+			var nf = (collision_normal * repulsion_force) * 5
 			body.apply_central_impulse(nf)
 
 
 func applyRandomBonus():
-	print("Call bonus")
 	if countTimeBonus >= 0:
-		print("Call bonus n")
 		return
 	countTimeBonus = 0.0
 	var result = RandomNumberGenerator.new().randi_range(0,1)
-	print("Call bonus o"+str(result))
 	match result:
 		0: spawnBarrier = true
 		1: shootActivate = true

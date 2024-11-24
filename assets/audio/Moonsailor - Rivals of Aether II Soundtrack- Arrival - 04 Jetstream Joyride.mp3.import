@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://su0f6xjnd34d"
+path="res://.godot/imported/Moonsailor - Rivals of Aether II Soundtrack- Arrival - 04 Jetstream Joyride.mp3-0b3211ec9a1dd8e3d3c004921723dc34.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Moonsailor - Rivals of Aether II Soundtrack- Arrival - 04 Jetstream Joyride.mp3"
+dest_files=["res://.godot/imported/Moonsailor - Rivals of Aether II Soundtrack- Arrival - 04 Jetstream Joyride.mp3-0b3211ec9a1dd8e3d3c004921723dc34.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
