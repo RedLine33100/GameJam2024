@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://460odh6x8wwd"]
 
 [ext_resource type="Texture2D" uid="uid://cy2wsn3qifxl8" path="res://assets/ui/bouton_03.png" id="1_8dmle"]
-[ext_resource type="Theme" path="res://assets/ui/marginTHeme.tres" id="2_x0ygn"]
+[ext_resource type="Theme" uid="uid://m5216ffy23m1" path="res://assets/ui/marginTHeme.tres" id="2_x0ygn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fj7b"]
 bg_color = Color(0.964742, 0.964742, 0.964742, 1)

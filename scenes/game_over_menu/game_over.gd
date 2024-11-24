@@ -25,11 +25,11 @@ func on_quit_pressed() -> void:
 
 func _on_game_won(winner: String):
 	if winner == "Egalité":
-		winner_label.text = "Egalité"
+		winner_label.text = "Egalité !"
 		# Mettre à jour l'UI ou afficher un message d'égalité
 	elif winner == "Joueur1":
-		winner_label.text = "Le Joueur 1 a gagné"
+		winner_label.text = "Le Joueur 1 a gagné !!"
 		# Mettre à jour l'UI ou afficher que le Joueur 1 a gagné
 	elif winner == "Joueur2":
-		winner_label.text = "Le Joueur 2 a gagné"
+		winner_label.text = "Le Joueur 2 a gagné !!"
 		# Mettre à jour l'UI ou afficher que le Joueur 2 a gagné
