@@ -1,23 +1,23 @@
 [gd_scene load_steps=12 format=3 uid="uid://jh2l8dfkng6d"]
 
-[ext_resource type="Texture2D" uid="uid://doskmpsk8cak8" path="res://assets/images/SkyBox/M3_Anime_equirectangular-png_Low_poly_skybox_of_223829484_12506313.png" id="1_r7bup"]
+[ext_resource type="Texture2D" uid="uid://chkq5mkr8xgjq" path="res://assets/images/Skybox v2.png" id="1_vdsol"]
 [ext_resource type="PackedScene" uid="uid://daf68dab700ad" path="res://assets/models/cars/CrousCar1.tscn" id="3_lr3vj"]
 [ext_resource type="AudioStream" uid="uid://bxssu420u6obo" path="res://assets/audio/car-engine-start-outside-72279.mp3" id="3_yo4ry"]
 [ext_resource type="AudioStream" uid="uid://163g77ot12kq" path="res://assets/audio/ambient-piano-logo-165357.mp3" id="4_551gq"]
 [ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://assets/models/components/Bonus/Bonus.tscn" id="4_dsbxc"]
 [ext_resource type="PackedScene" uid="uid://3h38kou5514b" path="res://assets/models/cars/CrousCar2.tscn" id="5_gf57a"]
-[ext_resource type="PackedScene" path="res://assets/models/arena/sb_arena_2.tscn" id="7_k37vi"]
+[ext_resource type="PackedScene" uid="uid://l7g16loalw6l" path="res://assets/models/arena/sb_arena_2.tscn" id="7_k37vi"]
 [ext_resource type="PackedScene" uid="uid://l76h7nw8dhg6" path="res://assets/models/gradins/gradin.tscn" id="8_d4kkm"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wt400"]
-panorama = ExtResource("1_r7bup")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_k67ct"]
+panorama = ExtResource("1_vdsol")
 
-[sub_resource type="Sky" id="Sky_ye2ye"]
-sky_material = SubResource("PanoramaSkyMaterial_wt400")
+[sub_resource type="Sky" id="Sky_h7t4w"]
+sky_material = SubResource("PanoramaSkyMaterial_k67ct")
 
 [sub_resource type="Environment" id="Environment_8dxyn"]
 background_mode = 2
-sky = SubResource("Sky_ye2ye")
+sky = SubResource("Sky_h7t4w")
 tonemap_mode = 2
 ssr_enabled = true
 ssao_enabled = true
@@ -27,6 +27,8 @@ ssao_power = 32.7849
 ssil_enabled = true
 sdfgi_y_scale = 2
 glow_enabled = true
+fog_mode = 1
+fog_density = 1.0
 
 [node name="Main" type="Node3D"]
 
@@ -56,7 +58,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(574, 648)
 render_target_update_mode = 4
 
 [node name="car" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_lr3vj")]
@@ -77,7 +79,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer2"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(574, 648)
 render_target_update_mode = 4
 
 [node name="car" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("5_gf57a")]
