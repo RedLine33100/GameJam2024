@@ -7,6 +7,7 @@ extends Control
 @onready var mainMenu = preload("res://scenes/main_menu/main_menu.tscn") as PackedScene
 
 signal quit_options_menu
+signal return_options_main_menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,7 +26,9 @@ func on_return_pressed() -> void:
 	set_process(false)
 	
 func on_mainmenu_pressed() -> void:
-	get_tree().change_scene_to_packed(mainMenu)
+	return_options_main_menu.emit()
+	set_process(false)
+	#get_tree().change_scene_to_packed(mainMenu)
 	
 func on_quit_pressed() -> void:
 	get_tree().quit()
