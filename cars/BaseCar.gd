@@ -2,6 +2,9 @@ extends VehicleBody3D
 
 @export var player_number = 1
 
+# Référence au nœud AudioStreamPlayer
+@onready var audio_player = $AudioStreamPlayer
+
 var STEER_SPEED = 1.5
 var STEER_LIMIT = 0.4
 var engine_force_value = 50
@@ -161,6 +164,7 @@ func set_life(value: int):
 		$SubViewport/HealthBar.value = value
 		$SubViewport/Explosion.visible = true
 		$SubViewport/Explosion/AnimationPlayer.play("explosion")
+		_play_sound_and_remove()
 		await get_tree().create_timer(1.3).timeout
 	$SubViewport/HealthBar.value = value
 	life = value
@@ -210,3 +214,16 @@ func applyRandomBonus():
 	match result:
 		0: spawnBarrier = true
 		1: shootActivate = true
+
+# Fonction async qui gère le son et la suppression
+func _play_sound_and_remove():
+	var temp_audio_player = AudioStreamPlayer.new() # Créer un AudioStreamPlayer temporaire
+	temp_audio_player.stream = audio_player.stream # Utiliser le même son
+	add_child(temp_audio_player) # Ajouter au parent
+	temp_audio_player.play() # Jouer le son
+	
+	# Attendre que le son soit terminé
+	while temp_audio_player.is_playing():
+		await get_tree().process_frame
+	
+	temp_audio_player.queue_free() # Supprimer le player temporaire après la fin du son
