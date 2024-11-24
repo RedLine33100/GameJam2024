@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://daf68dab700ad"]
+[gd_scene load_steps=12 format=3 uid="uid://daf68dab700ad"]
 
 [ext_resource type="PackedScene" uid="uid://duy0dbkychify" path="res://cars/BaseCar.tscn" id="1_lymph"]
 [ext_resource type="PackedScene" uid="uid://benmjny2guowm" path="res://cars/Models/Doge/Wheel.glb" id="2_stfoh"]
 [ext_resource type="Script" path="res://cars/collision_shape_3d.gd" id="3_d1dwl"]
 [ext_resource type="PackedScene" uid="uid://bty2rpvw2dh0h" path="res://cars/Models/Doge/doge-body.glb" id="4_co4uo"]
+[ext_resource type="FontFile" uid="uid://u0i0grxa025s" path="res://assets/ui/MYRIADPRO-BOLD.OTF" id="4_j3r8a"]
 [ext_resource type="PackedScene" uid="uid://d0bygn1bicolh" path="res://HealthBar/HealthBar.tscn" id="5_f7x7k"]
 [ext_resource type="PackedScene" uid="uid://bsinfco274tnj" path="res://Explosion/explosion.tscn" id="6_1lmdb"]
 
@@ -69,7 +70,11 @@ script = ExtResource("3_d1dwl")
 fov = 80.0
 target_distance = 5
 
+[node name="speed" parent="Hud" index="0"]
+theme_override_fonts/font = ExtResource("4_j3r8a")
+
 [node name="Label" parent="Hud" index="1"]
+theme_override_fonts/font = ExtResource("4_j3r8a")
 text = "Player 1!
 "
 uppercase = true
@@ -81,6 +86,8 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_j3r8a")
+theme_override_font_sizes/font_size = 22
 text = "Aucun bonus"
 uppercase = true
 

@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bxssu420u6obo" path="res://assets/audio/car-engine-start-outside-72279.mp3" id="3_yo4ry"]
 [ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://assets/models/components/Bonus/Bonus.tscn" id="4_dsbxc"]
 [ext_resource type="AudioStream" uid="uid://su0f6xjnd34d" path="res://assets/audio/Moonsailor - Rivals of Aether II Soundtrack- Arrival - 04 Jetstream Joyride.mp3" id="5_5x8nd"]
-[ext_resource type="PackedScene" path="res://assets/models/arena/sb_arena_2.tscn" id="7_k37vi"]
+[ext_resource type="PackedScene" uid="uid://l7g16loalw6l" path="res://assets/models/arena/sb_arena_2.tscn" id="7_k37vi"]
 [ext_resource type="PackedScene" uid="uid://l76h7nw8dhg6" path="res://assets/models/gradins/gradin.tscn" id="8_d4kkm"]
 [ext_resource type="Script" path="res://assets/models/death_plane/death_plane.gd" id="9_o73sp"]
 
@@ -63,7 +63,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(574, 648)
 render_target_update_mode = 4
 
 [node name="car" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_lr3vj")]
@@ -84,7 +84,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer2"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(574, 648)
 render_target_update_mode = 4
 
 [node name="car" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("3_lr3vj")]
