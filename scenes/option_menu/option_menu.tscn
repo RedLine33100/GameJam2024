@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj04gl2cjqbou"]
+[gd_scene load_steps=6 format=3 uid="uid://bj04gl2cjqbou"]
 
 [ext_resource type="Script" path="res://scenes/option_menu/option_menu.gd" id="1_ep7bn"]
 [ext_resource type="Texture2D" uid="uid://ck5rf8hjftqdh" path="res://assets/ui/options.png" id="2_2dhqu"]
 [ext_resource type="PackedScene" uid="uid://460odh6x8wwd" path="res://scenes/option_menu/settings_tab_container.tscn" id="2_6foon"]
-[ext_resource type="Theme" path="res://assets/ui/button_theme.tres" id="4_x5y4u"]
+[ext_resource type="Theme" uid="uid://dhfhx0etsflxs" path="res://assets/ui/button_theme.tres" id="4_x5y4u"]
+[ext_resource type="Texture2D" uid="uid://dlwnhc0flfx8" path="res://assets/images/controller_tutorial.png" id="5_is78q"]
 
 [node name="Option_Menu" type="Control"]
 process_mode = 3
@@ -70,3 +71,16 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("4_x5y4u")
 text = "QUITTER"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -314.0
+offset_top = -219.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_is78q")

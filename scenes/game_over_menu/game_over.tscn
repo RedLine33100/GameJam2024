@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0cwl00b76ov3"]
+[gd_scene load_steps=10 format=3 uid="uid://c0cwl00b76ov3"]
 
 [ext_resource type="Script" path="res://scenes/game_over_menu/game_over.gd" id="1_x2n2d"]
+[ext_resource type="Texture2D" uid="uid://csm8uywdgms64" path="res://assets/images/fond.jpg" id="2_nthu4"]
 [ext_resource type="Texture2D" uid="uid://beg5my3ktcd66" path="res://assets/ui/victory_screen/effet.png" id="2_snt1n"]
 [ext_resource type="Texture2D" uid="uid://dsvq847x2gg57" path="res://assets/ui/victory_screen/ruban_complete.png" id="3_tbnqp"]
 [ext_resource type="FontFile" uid="uid://u0i0grxa025s" path="res://assets/ui/MYRIADPRO-BOLD.OTF" id="4_jrxaf"]
-[ext_resource type="Theme" path="res://assets/ui/button_theme.tres" id="5_8wjx6"]
+[ext_resource type="Theme" uid="uid://dhfhx0etsflxs" path="res://assets/ui/button_theme.tres" id="5_8wjx6"]
 
 [sub_resource type="Animation" id="Animation_iswex"]
 length = 0.001
@@ -52,6 +53,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x2n2d")
+
+[node name="Background2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nthu4")
+expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visibility_layer = 2
