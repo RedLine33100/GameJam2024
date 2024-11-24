@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bj04gl2cjqbou" path="res://scenes/option_menu/option_menu.tscn" id="2_cetlm"]
 [ext_resource type="PackedScene" uid="uid://daf68dab700ad" path="res://assets/models/cars/CrousCar1.tscn" id="3_lr3vj"]
 [ext_resource type="AudioStream" uid="uid://bxssu420u6obo" path="res://assets/audio/car-engine-start-outside-72279.mp3" id="3_yo4ry"]
-[ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://assets/models/components/Bonus/Bonus.tscn" id="4_dsbxc"]
 [ext_resource type="AudioStream" uid="uid://su0f6xjnd34d" path="res://assets/audio/Moonsailor - Rivals of Aether II Soundtrack- Arrival - 04 Jetstream Joyride.mp3" id="5_5x8nd"]
 [ext_resource type="PackedScene" path="res://assets/models/arena/sb_arena_2.tscn" id="7_k37vi"]
 [ext_resource type="PackedScene" uid="uid://l76h7nw8dhg6" path="res://assets/models/gradins/gradin.tscn" id="8_d4kkm"]
+[ext_resource type="Script" path="res://Scripts/Spawn_Bonus.gd" id="9_1x0so"]
 [ext_resource type="Script" path="res://assets/models/death_plane/death_plane.gd" id="9_o73sp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_k67ct"]
@@ -72,9 +72,6 @@ render_target_update_mode = 4
 
 [node name="car" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_lr3vj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29, 15, 0)
-STEER_SPEED = 1.0
-STEER_LIMIT = 0.15
-engine_force_value = 200
 
 [node name="EngineSound" type="AudioStreamPlayer" parent="GridContainer/SubViewportContainer/SubViewport/car"]
 stream = ExtResource("3_yo4ry")
@@ -108,9 +105,6 @@ parameters/looping = true
 [node name="sb_arena2" parent="." instance=ExtResource("7_k37vi")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
-[node name="Bonus" parent="." instance=ExtResource("4_dsbxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -2.5)
-
 [node name="gradin" parent="." instance=ExtResource("8_d4kkm")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 86.6229, 2.54698, -13.0873)
 
@@ -124,6 +118,18 @@ script = ExtResource("9_o73sp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.94009, -0.347015, -9.96048)
 shape = SubResource("BoxShape3D_yw1le")
+
+[node name="Bonus_Spawnpoint_3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.46029, 49.2633)
+script = ExtResource("9_1x0so")
+
+[node name="Bonus_Spawnpoint_2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03671, -51.8919)
+script = ExtResource("9_1x0so")
+
+[node name="Bonus_Spawnpoint_1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+script = ExtResource("9_1x0so")
 
 [connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
 [connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car" to="GridContainer/SubViewportContainer2/SubViewport/car" method="_on_body_entered"]
