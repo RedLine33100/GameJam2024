@@ -1,6 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0cwl00b76ov3"]
+[gd_scene load_steps=8 format=3 uid="uid://c0cwl00b76ov3"]
 
 [ext_resource type="Script" path="res://scenes/game_over_menu/game_over.gd" id="1_x2n2d"]
+[ext_resource type="Texture2D" uid="uid://beg5my3ktcd66" path="res://assets/ui/victory_screen/effet.png" id="2_snt1n"]
+[ext_resource type="Texture2D" uid="uid://dsvq847x2gg57" path="res://assets/ui/victory_screen/ruban_complete.png" id="3_tbnqp"]
+[ext_resource type="FontFile" uid="uid://u0i0grxa025s" path="res://assets/ui/MYRIADPRO-BOLD.OTF" id="4_jrxaf"]
+
+[sub_resource type="Animation" id="Animation_iswex"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rrek1"]
+resource_name = "rotate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bnokt"]
+_data = {
+"RESET": SubResource("Animation_iswex"),
+"rotate": SubResource("Animation_rrek1")
+}
 
 [node name="Game_Over" type="Control"]
 layout_mode = 3
@@ -10,6 +50,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x2n2d")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -657.0
+offset_top = -720.0
+offset_right = 657.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(657, 720)
+size_flags_vertical = 3
+texture = ExtResource("2_snt1n")
+expand_mode = 4
+stretch_mode = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_bnokt")
+}
+autoplay = "rotate"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -23,31 +89,61 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 120
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+columns = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_tbnqp")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 5
 
 [node name="WinnerLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.301961, 0.780392, 0.87451, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("4_jrxaf")
 theme_override_font_sizes/font_size = 80
 text = "TEXT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 8
 
-[node name="MainMenu_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="MainMenu_Button" type="Button" parent="MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "MENU PRINCIPAL
 "
 
-[node name="Quit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit_Button" type="Button" parent="MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 4

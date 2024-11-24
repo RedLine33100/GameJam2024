@@ -1,8 +1,175 @@
-[gd_scene load_steps=2 format=3 uid="uid://l76h7nw8dhg6"]
+[gd_scene load_steps=57 format=3 uid="uid://l76h7nw8dhg6"]
 
 [ext_resource type="PackedScene" uid="uid://b2iv44082rtye" path="res://assets/models/gradins/gradin.blend" id="1_0whwu"]
+[ext_resource type="Texture2D" uid="uid://cduyo5flb0ps3" path="res://assets/models/arena/Parquet texture.png" id="2_88phm"]
+[ext_resource type="Texture2D" uid="uid://bymmk5sitm4dn" path="res://assets/models/arena/Parquet texture.jpg" id="3_tifrn"]
+[ext_resource type="Texture2D" uid="uid://cq68oqmicpdi5" path="res://assets/models/gradins/perso1.png" id="4_hl7hu"]
+[ext_resource type="Texture2D" uid="uid://ddsasluweby83" path="res://assets/models/gradins/perso 4.png" id="5_qn4oo"]
+[ext_resource type="Texture2D" uid="uid://cypxu3shev4ge" path="res://assets/models/gradins/perso2.png" id="6_r1nwq"]
+[ext_resource type="Texture2D" uid="uid://dbk7o7hwe3lf8" path="res://assets/models/gradins/perso3.png" id="7_st6v8"]
+[ext_resource type="Texture2D" uid="uid://eqibehbwsh0k" path="res://assets/models/gradins/Logo_Nouvelle_Region_Aquitaine_2016_01.jpg" id="8_s34ex"]
+[ext_resource type="Texture2D" uid="uid://br3r3qnv37jtp" path="res://assets/models/gradins/Ministère_de_la_Culture.svg.png" id="9_6ui8e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pbby"]
+albedo_texture = ExtResource("2_88phm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6hsb"]
+albedo_texture = ExtResource("2_88phm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kw3v"]
+albedo_texture = ExtResource("2_88phm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrw3t"]
+albedo_texture = ExtResource("3_tifrn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03eib"]
+albedo_texture = ExtResource("3_tifrn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mqs3"]
+albedo_texture = ExtResource("3_tifrn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sx5bk"]
+albedo_texture = ExtResource("4_hl7hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnn6a"]
+albedo_texture = ExtResource("5_qn4oo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jjia"]
+albedo_texture = ExtResource("6_r1nwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xsrg"]
+albedo_texture = ExtResource("5_qn4oo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6n2l7"]
+albedo_texture = ExtResource("7_st6v8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0y44"]
+albedo_texture = ExtResource("6_r1nwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptrub"]
+albedo_texture = ExtResource("7_st6v8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne1mo"]
+albedo_texture = ExtResource("6_r1nwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjrrs"]
+albedo_texture = ExtResource("7_st6v8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nc521"]
+albedo_texture = ExtResource("4_hl7hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awkv1"]
+albedo_texture = ExtResource("4_hl7hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utfnp"]
+albedo_texture = ExtResource("6_r1nwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twiit"]
+albedo_texture = ExtResource("5_qn4oo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fshn"]
+albedo_texture = ExtResource("4_hl7hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5a8qw"]
+albedo_texture = ExtResource("6_r1nwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfnld"]
+albedo_texture = ExtResource("5_qn4oo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdm0l"]
+albedo_texture = ExtResource("4_hl7hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qg0g7"]
+albedo_texture = ExtResource("7_st6v8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alpi1"]
+albedo_texture = ExtResource("7_st6v8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnndj"]
+albedo_texture = ExtResource("4_hl7hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbgo3"]
+albedo_texture = ExtResource("6_r1nwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yl5b"]
+albedo_texture = ExtResource("6_r1nwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p74hq"]
+albedo_texture = ExtResource("5_qn4oo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nanwr"]
+albedo_texture = ExtResource("5_qn4oo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kcoe"]
+albedo_texture = ExtResource("4_hl7hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11cxl"]
+albedo_texture = ExtResource("5_qn4oo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nc6pt"]
+albedo_texture = ExtResource("7_st6v8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymsjs"]
+albedo_texture = ExtResource("6_r1nwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3trs"]
+albedo_texture = ExtResource("5_qn4oo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ik6j"]
+albedo_texture = ExtResource("4_hl7hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4i5ic"]
+albedo_texture = ExtResource("6_r1nwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ld4a"]
+albedo_texture = ExtResource("7_st6v8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gcb0"]
+albedo_texture = ExtResource("4_hl7hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vve6y"]
+albedo_texture = ExtResource("7_st6v8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ep1a5"]
+albedo_texture = ExtResource("7_st6v8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wscfx"]
+albedo_texture = ExtResource("6_r1nwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_warh2"]
+albedo_texture = ExtResource("4_hl7hu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1q5g7"]
+albedo_texture = ExtResource("5_qn4oo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upa4r"]
+albedo_texture = ExtResource("5_qn4oo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iy4e1"]
+albedo_texture = ExtResource("8_s34ex")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_asseh"]
+albedo_texture = ExtResource("9_6ui8e")
 
 [node name="gradin" instance=ExtResource("1_0whwu")]
+
+[node name="Cube_098" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_2pbby")
+
+[node name="Cube_097" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_a6hsb")
+
+[node name="Cube_096" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_2kw3v")
+
+[node name="Cube_060" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_qrw3t")
+
+[node name="Cube_004" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_03eib")
+
+[node name="Cube_003" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_1mqs3")
 
 [node name="Spot" parent="." index="6"]
 visible = false
@@ -41,3 +208,126 @@ visible = false
 
 [node name="PhysCamera005_Target" parent="." index="17"]
 visible = false
+
+[node name="CMan0001-Se" parent="001xx66/3D溜溜网-模型不难找" index="0"]
+material_override = SubResource("StandardMaterial3D_sx5bk")
+
+[node name="CMan0001-Se_001" parent="001xx66/3D溜溜网-模型不难找" index="1"]
+material_override = SubResource("StandardMaterial3D_rnn6a")
+
+[node name="CMan0001-Se_002" parent="001xx66_001/3D溜溜网-模型不难找_001" index="0"]
+material_override = SubResource("StandardMaterial3D_5jjia")
+
+[node name="CMan0001-Se_003" parent="001xx66_001/3D溜溜网-模型不难找_001" index="1"]
+material_override = SubResource("StandardMaterial3D_6xsrg")
+
+[node name="CMan0001-Se_004" parent="001xx66_002/3D溜溜网-模型不难找_002" index="0"]
+material_override = SubResource("StandardMaterial3D_6n2l7")
+
+[node name="CMan0001-Se_005" parent="001xx66_002/3D溜溜网-模型不难找_002" index="1"]
+material_override = SubResource("StandardMaterial3D_d0y44")
+
+[node name="CMan0001-Se_006" parent="001xx66_003/3D溜溜网-模型不难找_003" index="0"]
+material_override = SubResource("StandardMaterial3D_ptrub")
+
+[node name="CMan0001-Se_007" parent="001xx66_003/3D溜溜网-模型不难找_003" index="1"]
+material_override = SubResource("StandardMaterial3D_ne1mo")
+
+[node name="CMan0001-Se_008" parent="001xx66_004/3D溜溜网-模型不难找_004" index="0"]
+material_override = SubResource("StandardMaterial3D_cjrrs")
+
+[node name="CMan0001-Se_009" parent="001xx66_004/3D溜溜网-模型不难找_004" index="1"]
+material_override = SubResource("StandardMaterial3D_nc521")
+
+[node name="CMan0001-Se_010" parent="001xx66_005/3D溜溜网-模型不难找_005" index="0"]
+material_override = SubResource("StandardMaterial3D_awkv1")
+
+[node name="CMan0001-Se_011" parent="001xx66_005/3D溜溜网-模型不难找_005" index="1"]
+material_override = SubResource("StandardMaterial3D_utfnp")
+
+[node name="CMan0001-Se_012" parent="001xx66_006/3D溜溜网-模型不难找_006" index="0"]
+material_override = SubResource("StandardMaterial3D_twiit")
+
+[node name="CMan0001-Se_013" parent="001xx66_006/3D溜溜网-模型不难找_006" index="1"]
+material_override = SubResource("StandardMaterial3D_5fshn")
+
+[node name="CMan0001-Se_014" parent="001xx66_007/3D溜溜网-模型不难找_007" index="0"]
+material_override = SubResource("StandardMaterial3D_5a8qw")
+
+[node name="CMan0001-Se_015" parent="001xx66_007/3D溜溜网-模型不难找_007" index="1"]
+material_override = SubResource("StandardMaterial3D_tfnld")
+
+[node name="CMan0001-Se_016" parent="001xx66_008/3D溜溜网-模型不难找_008" index="0"]
+material_override = SubResource("StandardMaterial3D_sdm0l")
+
+[node name="CMan0001-Se_017" parent="001xx66_008/3D溜溜网-模型不难找_008" index="1"]
+material_override = SubResource("StandardMaterial3D_qg0g7")
+
+[node name="CMan0001-Se_018" parent="001xx66_009/3D溜溜网-模型不难找_009" index="0"]
+material_override = SubResource("StandardMaterial3D_alpi1")
+
+[node name="CMan0001-Se_019" parent="001xx66_009/3D溜溜网-模型不难找_009" index="1"]
+material_override = SubResource("StandardMaterial3D_rnndj")
+
+[node name="CMan0001-Se_020" parent="001xx66_010/3D溜溜网-模型不难找_010" index="0"]
+material_override = SubResource("StandardMaterial3D_vbgo3")
+
+[node name="CMan0001-Se_021" parent="001xx66_010/3D溜溜网-模型不难找_010" index="1"]
+material_override = SubResource("StandardMaterial3D_6yl5b")
+
+[node name="CMan0001-Se_022" parent="001xx66_011/3D溜溜网-模型不难找_011" index="0"]
+material_override = SubResource("StandardMaterial3D_p74hq")
+
+[node name="CMan0001-Se_023" parent="001xx66_011/3D溜溜网-模型不难找_011" index="1"]
+material_override = SubResource("StandardMaterial3D_nanwr")
+
+[node name="CMan0001-Se_024" parent="001xx66_012/3D溜溜网-模型不难找_012" index="0"]
+material_override = SubResource("StandardMaterial3D_5kcoe")
+
+[node name="CMan0001-Se_025" parent="001xx66_013/3D溜溜网-模型不难找_013" index="0"]
+material_override = SubResource("StandardMaterial3D_11cxl")
+
+[node name="CMan0001-Se_026" parent="001xx66_014/3D溜溜网-模型不难找_014" index="0"]
+material_override = SubResource("StandardMaterial3D_nc6pt")
+
+[node name="CMan0001-Se_027" parent="001xx66_014/3D溜溜网-模型不难找_014" index="1"]
+material_override = SubResource("StandardMaterial3D_ymsjs")
+
+[node name="CMan0001-Se_028" parent="001xx66_015/3D溜溜网-模型不难找_015" index="0"]
+material_override = SubResource("StandardMaterial3D_e3trs")
+
+[node name="CMan0001-Se_029" parent="001xx66_016/3D溜溜网-模型不难找_016" index="0"]
+material_override = SubResource("StandardMaterial3D_5ik6j")
+
+[node name="CMan0001-Se_030" parent="001xx66_017/3D溜溜网-模型不难找_017" index="0"]
+material_override = SubResource("StandardMaterial3D_4i5ic")
+
+[node name="CMan0001-Se_032" parent="001xx66_020/3D溜溜网-模型不难找_020" index="0"]
+material_override = SubResource("StandardMaterial3D_7ld4a")
+
+[node name="CMan0001-Se_033" parent="001xx66_021/3D溜溜网-模型不难找_021" index="0"]
+material_override = SubResource("StandardMaterial3D_2gcb0")
+
+[node name="CMan0001-Se_034" parent="001xx66_022/3D溜溜网-模型不难找_022" index="0"]
+material_override = SubResource("StandardMaterial3D_vve6y")
+
+[node name="CMan0001-Se_035" parent="001xx66_023/3D溜溜网-模型不难找_023" index="0"]
+material_override = SubResource("StandardMaterial3D_ep1a5")
+
+[node name="CMan0001-Se_036" parent="001xx66_023/3D溜溜网-模型不难找_023" index="1"]
+material_override = SubResource("StandardMaterial3D_wscfx")
+
+[node name="CMan0001-Se_037" parent="001xx66_024/3D溜溜网-模型不难找_024" index="0"]
+material_override = SubResource("StandardMaterial3D_warh2")
+
+[node name="CMan0001-Se_038" parent="001xx66_025/3D溜溜网-模型不难找_025" index="0"]
+material_override = SubResource("StandardMaterial3D_1q5g7")
+
+[node name="CMan0001-Se_039" parent="001xx66_026/3D溜溜网-模型不难找_026" index="0"]
+material_override = SubResource("StandardMaterial3D_upa4r")
+
+[node name="Plane" parent="." index="45"]
+material_override = SubResource("StandardMaterial3D_iy4e1")
+
+[node name="Plane_001" parent="." index="46"]
+material_override = SubResource("StandardMaterial3D_asseh")

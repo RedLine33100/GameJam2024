@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var car1 = $GridContainer/SubViewportContainer/SubViewport/car as VehicleBody3D
-@onready var car2 = $GridContainer/SubViewportContainer2/SubViewport/car2 as VehicleBody3D
+@onready var car2 = $GridContainer/SubViewportContainer2/SubViewport/car as VehicleBody3D
 @onready var game_over = preload("res://scenes/game_over_menu/game_over.tscn") as PackedScene
 
 # Called when the node enters the scene tree for the first time.

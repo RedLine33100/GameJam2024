@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgnr7nmxjybwm"]
+[gd_scene load_steps=8 format=3 uid="uid://cgnr7nmxjybwm"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_005ci"]
 [ext_resource type="PackedScene" uid="uid://jh2l8dfkng6d" path="res://scenes/car.tscn" id="2_5nuvn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://iv5gx2ienba0" path="res://assets/images/Kart_Crous.png" id="2_twuw2"]
 [ext_resource type="Texture2D" uid="uid://cswi8vnpcbbq8" path="res://assets/ui/chefphoto-02_R.png" id="3_w41tr"]
 [ext_resource type="Texture2D" uid="uid://byiyto3bcoidb" path="res://assets/ui/logo_izly_big.png" id="4_0lc1i"]
+[ext_resource type="Theme" path="res://assets/ui/button_theme.tres" id="5_tfvuk"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -76,6 +77,7 @@ layout_mode = 2
 [node name="Start_Button" type="Button" parent="MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(360, 96)
 layout_mode = 2
+theme = ExtResource("5_tfvuk")
 theme_override_font_sizes/font_size = 40
 text = "JOUER"
 
@@ -85,6 +87,7 @@ layout_mode = 2
 [node name="Option_Button" type="Button" parent="MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(360, 96)
 layout_mode = 2
+theme = ExtResource("5_tfvuk")
 theme_override_font_sizes/font_size = 40
 text = "OPTIONS"
 
@@ -94,6 +97,7 @@ layout_mode = 2
 [node name="Quit_Button" type="Button" parent="MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(360, 96)
 layout_mode = 2
+theme = ExtResource("5_tfvuk")
 theme_override_font_sizes/font_size = 40
 text = "QUITTER
 "
