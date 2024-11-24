@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://m5216ffy23m1"]
+
+[ext_resource type="StyleBox" uid="uid://ciil8m4dfnbr3" path="res://assets/ui/button_normal.tres" id="1_vuese"]
+[ext_resource type="StyleBox" uid="uid://mn0plw48l4r6" path="res://assets/ui/button_hover.tres" id="2_fu6nc"]
+[ext_resource type="FontFile" uid="uid://bb0ga1a2cbvx6" path="res://assets/ui/MYRIADPRO-BOLD.OTF" id="3_6x1mc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wc2xa"]
+
+[resource]
+Button/styles/disabled = ExtResource("1_vuese")
+Button/styles/focus = ExtResource("2_fu6nc")
+Button/styles/hover = ExtResource("2_fu6nc")
+Button/styles/normal = ExtResource("1_vuese")
+Button/styles/pressed = ExtResource("2_fu6nc")
+Label/colors/font_color = Color(0, 0.376471, 0.490196, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("3_6x1mc")
+Label/styles/normal = SubResource("StyleBoxEmpty_wc2xa")
