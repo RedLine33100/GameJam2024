@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://ciil8m4dfnbr3" path="res://assets/ui/button_normal.tres" id="1_vuese"]
 [ext_resource type="StyleBox" uid="uid://mn0plw48l4r6" path="res://assets/ui/button_hover.tres" id="2_fu6nc"]
-[ext_resource type="FontFile" uid="uid://bb0ga1a2cbvx6" path="res://assets/ui/MYRIADPRO-BOLD.OTF" id="3_6x1mc"]
+[ext_resource type="FontFile" uid="uid://u0i0grxa025s" path="res://assets/ui/MYRIADPRO-BOLD.OTF" id="3_6x1mc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wc2xa"]
 

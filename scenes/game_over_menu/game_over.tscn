@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0cwl00b76ov3"]
+[gd_scene load_steps=9 format=3 uid="uid://c0cwl00b76ov3"]
 
 [ext_resource type="Script" path="res://scenes/game_over_menu/game_over.gd" id="1_x2n2d"]
 [ext_resource type="Texture2D" uid="uid://beg5my3ktcd66" path="res://assets/ui/victory_screen/effet.png" id="2_snt1n"]
 [ext_resource type="Texture2D" uid="uid://dsvq847x2gg57" path="res://assets/ui/victory_screen/ruban_complete.png" id="3_tbnqp"]
 [ext_resource type="FontFile" uid="uid://u0i0grxa025s" path="res://assets/ui/MYRIADPRO-BOLD.OTF" id="4_jrxaf"]
+[ext_resource type="Theme" uid="uid://dhfhx0etsflxs" path="res://assets/ui/button_theme.tres" id="5_8wjx6"]
 
 [sub_resource type="Animation" id="Animation_iswex"]
 length = 0.001
@@ -93,26 +94,11 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 theme_override_constants/margin_top = 120
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 4
-columns = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 6
+size_flags_vertical = 6
 texture = ExtResource("3_tbnqp")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -140,6 +126,8 @@ size_flags_vertical = 8
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("5_8wjx6")
+theme_override_font_sizes/font_size = 18
 text = "MENU PRINCIPAL
 "
 
@@ -147,4 +135,5 @@ text = "MENU PRINCIPAL
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("5_8wjx6")
 text = "QUITTER"

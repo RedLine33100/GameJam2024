@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/option_menu/option_menu.gd" id="1_ep7bn"]
 [ext_resource type="Texture2D" uid="uid://ck5rf8hjftqdh" path="res://assets/ui/options.png" id="2_2dhqu"]
 [ext_resource type="PackedScene" uid="uid://460odh6x8wwd" path="res://scenes/option_menu/settings_tab_container.tscn" id="2_6foon"]
-[ext_resource type="Theme" path="res://assets/ui/button_theme.tres" id="4_x5y4u"]
+[ext_resource type="Theme" uid="uid://dhfhx0etsflxs" path="res://assets/ui/button_theme.tres" id="4_x5y4u"]
 
 [node name="Option_Menu" type="Control"]
 layout_mode = 3

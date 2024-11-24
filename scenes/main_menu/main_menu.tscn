@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://iv5gx2ienba0" path="res://assets/images/Kart_Crous.png" id="2_twuw2"]
 [ext_resource type="Texture2D" uid="uid://cswi8vnpcbbq8" path="res://assets/ui/chefphoto-02_R.png" id="3_w41tr"]
 [ext_resource type="Texture2D" uid="uid://byiyto3bcoidb" path="res://assets/ui/logo_izly_big.png" id="4_0lc1i"]
-[ext_resource type="Theme" path="res://assets/ui/button_theme.tres" id="5_tfvuk"]
+[ext_resource type="Theme" uid="uid://dhfhx0etsflxs" path="res://assets/ui/button_theme.tres" id="5_tfvuk"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
