@@ -29,6 +29,7 @@ var last_barrier_position = Vector3.ZERO
 
 var bonusLabel = null
 var countTimeBonus : float = -1.0
+var random = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	$SubViewport/HealthBar.max_value = default_life
@@ -47,7 +48,6 @@ func _ready() -> void:
 	instance.position = Vector3(0,1.5,0)
 	
 	$Hud/Label.text = "Joueur "+str(player_number)
-	
 
 func shoot():
 	if shootActivate:
@@ -203,7 +203,7 @@ func applyRandomBonus():
 	if countTimeBonus >= 0:
 		return
 	countTimeBonus = 0.0
-	var result = RandomNumberGenerator.new().randi_range(0,1)
+	var result = random.randi_range(0,1)
 	match result:
 		0: spawnBarrier = true
 		1: shootActivate = true
