@@ -123,6 +123,15 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 8
 
+[node name="Replay_Button" type="Button" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_8wjx6")
+theme_override_font_sizes/font_size = 18
+text = "REJOUER
+"
+
 [node name="MainMenu_Button" type="Button" parent="MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2

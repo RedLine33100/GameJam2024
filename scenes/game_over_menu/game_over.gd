@@ -2,7 +2,10 @@ extends Control
 
 @onready var quit_button = $MarginContainer/VBoxContainer2/Quit_Button as Button
 @onready var mainmenu_button = $MarginContainer/VBoxContainer2/MainMenu_Button as Button
+@onready var replay_button = $MarginContainer/VBoxContainer2/Replay_Button as Button
+
 @onready var winner_label = $MarginContainer/VBoxContainer/WinnerLabel as Label
+
 @onready var mainMenu = load("res://scenes/main_menu/main_menu.tscn") as PackedScene
 @onready var game_scene = load("res://scenes/car.tscn") as PackedScene
 
@@ -11,6 +14,7 @@ extends Control
 func _ready() -> void:
 	mainmenu_button.button_down.connect(on_mainmenu_pressed)
 	quit_button.button_down.connect(on_quit_pressed)
+	replay_button.button_down.connect(on_replay_pressed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,6 +25,9 @@ func on_mainmenu_pressed() -> void:
 
 func on_quit_pressed() -> void:
 	get_tree().quit()
+	
+func on_replay_pressed() -> void:
+	get_tree().change_scene_to_packed(game_scene)
 	
 
 func _on_game_won(winner: String):
