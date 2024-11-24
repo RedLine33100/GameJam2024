@@ -2,27 +2,25 @@ extends VehicleBody3D
 
 @export var player_number = 1
 
-@export var STEER_SPEED = 1.5
-@export var STEER_LIMIT = 0.6
-@export var engine_force_value = 40
+var STEER_SPEED = 1.5
+var STEER_LIMIT = 0.4
+var engine_force_value = 50
 var steer_target = 0
 
 var projectile_scene = load("res://assets/models/components/Projectile/Projectile.tscn")
 var spawnBarrier = false
 var shootActivate = false
 var barrier_scene = load("res://assets/models/components/Barrier/Barrier.tscn")
-@export var barrier_spacing = 1.0  # Distance minimale entre deux barrières
+var barrier_spacing = 1.0  # Distance minimale entre deux barrières
 var last_barrier_position = Vector3.ZERO
 
 # Damage multiplier for frontal collisions
-@export var frontal_damage_multiplier: float = 1.5
-@export var base_damage: float = 10.0
-@export var max_repulsion_force: float = 100.0  # Maximum repulsion force
+var frontal_damage_multiplier: float = 1.5
+var base_damage: float = 10.0
+var max_repulsion_force: float = 100.0  # Maximum repulsion force
 
-@export var default_life : int = 100
-
-#@export var default_life : int = 10
-@export var life : int = 0
+var default_life : int = 100
+var life : int = 0
 
 	
 @onready var engine_sound = $EngineSound as AudioStreamPlayer
