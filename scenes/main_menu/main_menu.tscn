@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgnr7nmxjybwm"]
+[gd_scene load_steps=12 format=3 uid="uid://cgnr7nmxjybwm"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_005ci"]
 [ext_resource type="PackedScene" uid="uid://jh2l8dfkng6d" path="res://scenes/car.tscn" id="2_5nuvn"]
@@ -6,6 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://iv5gx2ienba0" path="res://assets/images/Kart_Crous.png" id="2_twuw2"]
 [ext_resource type="Texture2D" uid="uid://cswi8vnpcbbq8" path="res://assets/ui/chefphoto-02_R.png" id="3_w41tr"]
 [ext_resource type="Texture2D" uid="uid://byiyto3bcoidb" path="res://assets/ui/logo_izly_big.png" id="4_0lc1i"]
+[ext_resource type="Texture2D" uid="uid://dm6ffkt3vvi4i" path="res://assets/ui/bouton_02.png" id="5_2ll43"]
+[ext_resource type="Texture2D" uid="uid://dit4d0m47n8ma" path="res://assets/ui/bouton_01.png" id="6_8fdex"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_utjxf"]
+texture = ExtResource("5_2ll43")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ha4w1"]
+texture = ExtResource("6_8fdex")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlaf0"]
+texture = ExtResource("5_2ll43")
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -77,6 +88,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(360, 96)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
+theme_override_styles/disabled = SubResource("StyleBoxTexture_utjxf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ha4w1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qlaf0")
 text = "JOUER"
 
 [node name="Seperator3" type="Control" parent="MarginContainer/GridContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]

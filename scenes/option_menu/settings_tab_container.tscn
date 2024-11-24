@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://460odh6x8wwd"]
+[gd_scene load_steps=3 format=3 uid="uid://460odh6x8wwd"]
+
+[ext_resource type="Texture2D" uid="uid://cy2wsn3qifxl8" path="res://assets/ui/bouton_03.png" id="1_8dmle"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ead5m"]
+color = Color(0.305882, 0.768627, 0.917647, 1)
+thickness = 8
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -20,10 +26,9 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Sons" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -61,6 +66,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("1_8dmle")
+theme_override_icons/grabber_highlight = ExtResource("1_8dmle")
+theme_override_icons/grabber_disabled = ExtResource("1_8dmle")
+theme_override_icons/tick = ExtResource("1_8dmle")
 value = 50.0
 
 [node name="Separator2" type="Control" parent="TabContainer/Sons/MarginContainer/VBoxContainer"]
@@ -81,6 +90,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("1_8dmle")
+theme_override_icons/grabber_highlight = ExtResource("1_8dmle")
+theme_override_icons/grabber_disabled = ExtResource("1_8dmle")
+theme_override_icons/tick = ExtResource("1_8dmle")
 value = 50.0
 
 [node name="Separator3" type="Control" parent="TabContainer/Sons/MarginContainer/VBoxContainer"]
@@ -101,9 +114,15 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("1_8dmle")
+theme_override_icons/grabber_highlight = ExtResource("1_8dmle")
+theme_override_icons/grabber_disabled = ExtResource("1_8dmle")
+theme_override_icons/tick = ExtResource("1_8dmle")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_ead5m")
 value = 50.0
 
 [node name="Controles" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
