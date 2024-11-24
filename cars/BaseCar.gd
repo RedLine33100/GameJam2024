@@ -35,6 +35,15 @@ func _ready() -> void:
 	$SubViewport/HealthBar.value = default_life
 	life = default_life
 	bonusLabel = $Hud/Label2
+	
+	var str = "res://assets/models/cars/car1/car_1.tscn"
+	if player_number != 1:
+		str = "res://assets/models/cars/car2/car_2.tscn"
+	var node = load(str)
+	var instance = node.instantiate()
+	add_child(instance)
+	instance.scale = Vector3(2, 2, 2)
+	instance.position = Vector3(0,1.5,0)
 
 func shoot():
 	if shootActivate:

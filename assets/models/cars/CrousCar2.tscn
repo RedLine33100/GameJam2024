@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3h38kou5514b"]
+[gd_scene load_steps=11 format=3 uid="uid://dcb4f7d8y6lfq"]
 
 [ext_resource type="PackedScene" uid="uid://duy0dbkychify" path="res://cars/BaseCar.tscn" id="1_g53yl"]
 [ext_resource type="PackedScene" uid="uid://benmjny2guowm" path="res://cars/Models/Doge/Wheel.glb" id="2_eh0gq"]

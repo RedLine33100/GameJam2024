@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://jh2l8dfkng6d"]
+[gd_scene load_steps=11 format=3 uid="uid://jh2l8dfkng6d"]
 
 [ext_resource type="Texture2D" uid="uid://doskmpsk8cak8" path="res://assets/images/SkyBox/M3_Anime_equirectangular-png_Low_poly_skybox_of_223829484_12506313.png" id="1_r7bup"]
-[ext_resource type="PackedScene" uid="uid://daf68dab700ad" path="res://assets/models/cars/CrousCar1.tscn" id="3_lr3vj"]
+[ext_resource type="PackedScene" uid="uid://da85hnowf7dbb" path="res://assets/models/cars/CrousCar1.tscn" id="3_lr3vj"]
 [ext_resource type="AudioStream" uid="uid://bxssu420u6obo" path="res://assets/audio/car-engine-start-outside-72279.mp3" id="3_yo4ry"]
 [ext_resource type="AudioStream" uid="uid://163g77ot12kq" path="res://assets/audio/ambient-piano-logo-165357.mp3" id="4_551gq"]
 [ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://assets/models/components/Bonus/Bonus.tscn" id="4_dsbxc"]
-[ext_resource type="PackedScene" uid="uid://3h38kou5514b" path="res://assets/models/cars/CrousCar2.tscn" id="5_gf57a"]
 [ext_resource type="PackedScene" uid="uid://l7g16loalw6l" path="res://assets/models/arena/sb_arena_2.tscn" id="7_k37vi"]
 [ext_resource type="PackedScene" uid="uid://l76h7nw8dhg6" path="res://assets/models/gradins/gradin.tscn" id="8_d4kkm"]
 
@@ -80,12 +79,9 @@ handle_input_locally = false
 size = Vector2i(574, 648)
 render_target_update_mode = 4
 
-[node name="car" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("5_gf57a")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29, 15, 0)
+[node name="car" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("3_lr3vj")]
+transform = Transform3D(-0.048013, 0, 0.998847, 0, 1, 0, -0.998847, 0, -0.048013, 29.4217, 15.0306, 0)
 player_number = 2
-STEER_SPEED = 1.0
-STEER_LIMIT = 0.15
-engine_force_value = 200
 
 [node name="EngineSound" type="AudioStreamPlayer" parent="GridContainer/SubViewportContainer2/SubViewport/car"]
 stream = ExtResource("3_yo4ry")
@@ -110,4 +106,3 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 86.6229, -14.9676, -13.087
 transform = Transform3D(-20, 0, -1.74846e-06, 0, 20, 0, 1.74846e-06, 0, -20, -97.1389, -14.9676, -43.6947)
 
 [connection signal="body_entered" from="GridContainer/SubViewportContainer/SubViewport/car" to="GridContainer/SubViewportContainer/SubViewport/car" method="_on_body_entered"]
-[connection signal="body_entered" from="GridContainer/SubViewportContainer2/SubViewport/car" to="GridContainer/SubViewportContainer2/SubViewport/car" method="_on_body_entered"]
