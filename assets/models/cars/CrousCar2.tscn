@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3h38kou5514b"]
+[gd_scene load_steps=11 format=3 uid="uid://dcb4f7d8y6lfq"]
 
 [ext_resource type="PackedScene" uid="uid://duy0dbkychify" path="res://cars/BaseCar.tscn" id="1_g53yl"]
 [ext_resource type="PackedScene" uid="uid://benmjny2guowm" path="res://cars/Models/Doge/Wheel.glb" id="2_eh0gq"]
@@ -72,6 +72,16 @@ target_distance = 5
 [node name="Label" parent="Hud" index="1"]
 text = "Player 2!
 "
+uppercase = true
+
+[node name="Label2" type="Label" parent="Hud" index="2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Aucun bonus"
 uppercase = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="7"]

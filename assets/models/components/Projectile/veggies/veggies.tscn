@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bexnn7783yvi" path="res://assets/models/components/Projectile/veggies/veggies.blend" id="1_ui5qh"]
 [ext_resource type="Texture2D" uid="uid://dvaytdb1q0xf4" path="res://assets/models/components/Projectile/veggies/textures/Eggplant_Jalapeno_Cucumber.png" id="2_ei5q6"]
-[ext_resource type="Texture2D" uid="uid://563cu6dwgome" path="res://assets/models/components/Projectile/veggies/textures/Carrot_Lettuce_Brocoli.png" id="3_yqgfo"]
+[ext_resource type="Texture2D" uid="uid://bddrf44363b2" path="res://assets/models/components/Projectile/veggies/textures/Carrot_Lettuce_Brocoli.png" id="3_yqgfo"]
 [ext_resource type="Texture2D" uid="uid://66xyn4q7wqh0" path="res://assets/models/components/Projectile/veggies/textures/Potato_Onion_Tomato_Pepper.png" id="4_gcmfa"]
 [ext_resource type="Texture2D" uid="uid://bin2417p45fbv" path="res://assets/models/components/Projectile/veggies/textures/Bellpeppers.png" id="5_2ertp"]
 
