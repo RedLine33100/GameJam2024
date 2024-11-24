@@ -1,9 +1,9 @@
 class_name OptionsMenu
 extends Control
 
-@onready var return_button = $MarginContainer/VBoxContainer/Return_Button as Button
-@onready var mainmenu_button = $MarginContainer/VBoxContainer/MainMenu_Button as Button
-@onready var quit_button = $MarginContainer/VBoxContainer/Quit_Button as Button
+@onready var return_button = $MarginContainer/VBoxContainer/HBoxContainer/Return_Button as Button
+@onready var mainmenu_button = $MarginContainer/VBoxContainer/HBoxContainer/MainMenu_Button as Button
+@onready var quit_button = $MarginContainer/VBoxContainer/HBoxContainer/Quit_Button as Button
 @onready var mainMenu = preload("res://scenes/main_menu/main_menu.tscn") as PackedScene
 
 signal quit_options_menu

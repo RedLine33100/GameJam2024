@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj04gl2cjqbou"]
+[gd_scene load_steps=5 format=3 uid="uid://bj04gl2cjqbou"]
 
 [ext_resource type="Script" path="res://scenes/option_menu/option_menu.gd" id="1_ep7bn"]
+[ext_resource type="Texture2D" uid="uid://dgml11exanile" path="res://assets/ui/options.png" id="2_2dhqu"]
 [ext_resource type="PackedScene" uid="uid://460odh6x8wwd" path="res://scenes/option_menu/settings_tab_container.tscn" id="2_6foon"]
+[ext_resource type="Theme" uid="uid://dhfhx0etsflxs" path="res://assets/ui/button_theme.tres" id="4_x5y4u"]
 
 [node name="Option_Menu" type="Control"]
 layout_mode = 3
@@ -29,33 +31,41 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "OPTIONS"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("2_2dhqu")
+stretch_mode = 3
 
 [node name="Settings_Tab_Container" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_6foon")]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Return_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Return_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme = ExtResource("4_x5y4u")
 text = "RETOUR"
 
-[node name="MainMenu_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="MainMenu_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme = ExtResource("4_x5y4u")
+theme_override_font_sizes/font_size = 17
 text = "MENU PRINCIPAL"
 
-[node name="Quit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme = ExtResource("4_x5y4u")
 text = "QUITTER"

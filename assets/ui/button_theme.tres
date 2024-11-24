@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dhfhx0etsflxs"]
+
+[ext_resource type="FontFile" uid="uid://bb0ga1a2cbvx6" path="res://assets/ui/MYRIADPRO-BOLD.OTF" id="1_05csv"]
+[ext_resource type="StyleBox" uid="uid://ciil8m4dfnbr3" path="res://assets/ui/button_normal.tres" id="2_csaia"]
+[ext_resource type="StyleBox" uid="uid://mn0plw48l4r6" path="res://assets/ui/button_hover.tres" id="3_ynt66"]
+
+[resource]
+Button/font_sizes/font_size = 22
+Button/fonts/font = ExtResource("1_05csv")
+Button/styles/disabled = ExtResource("2_csaia")
+Button/styles/focus = ExtResource("3_ynt66")
+Button/styles/hover = ExtResource("3_ynt66")
+Button/styles/normal = ExtResource("2_csaia")
+Button/styles/pressed = ExtResource("3_ynt66")
