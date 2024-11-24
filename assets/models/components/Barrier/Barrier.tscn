@@ -14,6 +14,7 @@ material = SubResource("StandardMaterial3D_7xkx2")
 
 [node name="Barrier" type="Node3D"]
 script = ExtResource("1_ofmr6")
+lifetime = 3.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
