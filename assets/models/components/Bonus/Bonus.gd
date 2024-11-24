@@ -32,6 +32,7 @@ func _play_sound_and_remove():
 	temp_audio_player.stream = audio_player.stream # Utiliser le même son
 	get_parent().add_child(temp_audio_player) # Ajouter au parent
 	temp_audio_player.play() # Jouer le son
-	queue_free() # Supprimer immédiatement l'objet
+	self.visible = false
 	await temp_audio_player.finished # Attendre le signal 'finished' du temp_audio_player
 	temp_audio_player.queue_free() # Supprimer le player temporaire après la fin du son
+	queue_free() # Supprimer immédiatement l'objet
