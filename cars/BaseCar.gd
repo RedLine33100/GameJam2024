@@ -33,6 +33,7 @@ var countTimeBonus : float = -1.0
 func _ready() -> void:
 	$SubViewport/HealthBar.max_value = default_life
 	$SubViewport/HealthBar.value = default_life
+	$SubViewport/Explosion.visible = false
 	life = default_life
 	bonusLabel = $Hud/Label2
 	
@@ -148,11 +149,20 @@ func heal(amount: int):
 func damage(damage: int):
 	life -= damage
 	if(life<0):
-		life = 0
+		set_life(0)
 	$SubViewport/HealthBar.value = life
+	
 
 func set_life(value: int):
+	if (value == 0):
+		$SubViewport/HealthBar.value = value
+		$SubViewport/Explosion.visible = true
+		$SubViewport/Explosion/AnimationPlayer.play("explosion")
+		await get_tree().create_timer(1.3).timeout
+	$SubViewport/HealthBar.value = value
 	life = value
+	
+		
 	
 
 func traction(speed):

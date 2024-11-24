@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://da85hnowf7dbb"]
+[gd_scene load_steps=11 format=3 uid="uid://daf68dab700ad"]
 
 [ext_resource type="PackedScene" uid="uid://duy0dbkychify" path="res://cars/BaseCar.tscn" id="1_lymph"]
 [ext_resource type="PackedScene" uid="uid://benmjny2guowm" path="res://cars/Models/Doge/Wheel.glb" id="2_stfoh"]
 [ext_resource type="Script" path="res://cars/collision_shape_3d.gd" id="3_d1dwl"]
 [ext_resource type="PackedScene" uid="uid://bty2rpvw2dh0h" path="res://cars/Models/Doge/doge-body.glb" id="4_co4uo"]
 [ext_resource type="PackedScene" uid="uid://d0bygn1bicolh" path="res://HealthBar/HealthBar.tscn" id="5_f7x7k"]
+[ext_resource type="PackedScene" uid="uid://bsinfco274tnj" path="res://Explosion/explosion.tscn" id="6_1lmdb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n7qdn"]
 radius = 0.291194
@@ -104,6 +105,8 @@ disable_3d = true
 transparent_bg = true
 
 [node name="HealthBar" parent="SubViewport" index="0" instance=ExtResource("5_f7x7k")]
+
+[node name="Explosion" parent="SubViewport" index="1" instance=ExtResource("6_1lmdb")]
 
 [node name="Sprite3D" type="Sprite3D" parent="." index="12"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.95641, 0)
