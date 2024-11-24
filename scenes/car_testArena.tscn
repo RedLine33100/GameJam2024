@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6a77t6d6pmu3"]
+[gd_scene load_steps=7 format=3 uid="uid://c4b8d5njoan48"]
 
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/Doge.tscn" id="2_hjdua"]
-[ext_resource type="PackedScene" uid="uid://bar3fqmpwcwwn" path="res://assets/models/components/Barrier/Barrier.tscn" id="2_wmrph"]
 [ext_resource type="PackedScene" uid="uid://dw4erjxxvl6tj" path="res://assets/models/components/Bonus/Bonus.tscn" id="3_1oxnb"]
-[ext_resource type="PackedScene" uid="uid://bk8lfs1oxhvu1" path="res://assets/models/components/Projectile/Projectile.tscn" id="3_nymjy"]
 [ext_resource type="PackedScene" uid="uid://l7g16loalw6l" path="res://assets/models/arena/sb_arena_2.tscn" id="3_wqmxj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7tlo"]
@@ -55,7 +53,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(574, 648)
 render_target_update_mode = 4
 
 [node name="car" parent="GridContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_hjdua")]
@@ -63,8 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.184, -6.309)
 collision_layer = 3
 collision_mask = 3
 engine_force_value = 200
-barrier_scene = ExtResource("2_wmrph")
-projectile_scene = ExtResource("3_nymjy")
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="GridContainer"]
 layout_mode = 2
@@ -74,17 +70,15 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="GridContainer/SubViewportContainer2"]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(574, 648)
 render_target_update_mode = 4
 
 [node name="car2" parent="GridContainer/SubViewportContainer2/SubViewport" instance=ExtResource("2_hjdua")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564415, 0.184314, -6.30866)
 collision_layer = 3
 collision_mask = 3
-engine_force_value = 200
 player_number = 2
-barrier_scene = ExtResource("2_wmrph")
-projectile_scene = ExtResource("3_nymjy")
+engine_force_value = 200
 
 [node name="sb_arena2" parent="." instance=ExtResource("3_wqmxj")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -14.9501, -50.2734)

@@ -82,7 +82,7 @@ offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
 text = "Aucun bonus"
-uppercase = true
+horizontal_alignment = 2
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="7"]
 transform = Transform3D(-9.61651e-08, -1.35, 0, 2.2, -5.90104e-08, 0, 0, 0, 2, 0, 1.01366, -1.42507)

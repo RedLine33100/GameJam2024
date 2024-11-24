@@ -19,8 +19,9 @@ func _process(delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	print("bonus !")
 	# (exemple)
-	if body.is_in_group("car"): # Vérifie si l'objet est un joueur
-		apply_bonus(body) # Appliquer l'effet du bonus au joueur
+	if body is VehicleBody3D:
+		var car : VehicleBody3D = body
+		car.applyRandomBonus()
 		# Appeler une fonction async pour gérer le son et la suppression
 		_play_sound_and_remove()
 	pass # Replace with function body.
@@ -34,13 +35,3 @@ func _play_sound_and_remove():
 	queue_free() # Supprimer immédiatement l'objet
 	await temp_audio_player.finished # Attendre le signal 'finished' du temp_audio_player
 	temp_audio_player.queue_free() # Supprimer le player temporaire après la fin du son
-
-# Appliquer le bonus au joueur (exemple)
-func apply_bonus(player: Node):
-	match bonus_type:
-		"health":
-			player.heal(10)
-		"speed":
-			player.apply_speed_boost()
-		"shield":
-			player.apply_shield()

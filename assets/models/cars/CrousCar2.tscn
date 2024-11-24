@@ -74,6 +74,16 @@ text = "Player 2!
 "
 uppercase = true
 
+[node name="Label2" type="Label" parent="Hud" index="2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Aucun bonus"
+uppercase = true
+
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="7"]
 transform = Transform3D(-9.61651e-08, -1.35, 0, 2.2, -5.90104e-08, 0, 0, 0, 2, 0, 1.014, -1.425)
 shape = SubResource("CapsuleShape3D_n7qdn")

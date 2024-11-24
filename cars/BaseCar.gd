@@ -7,9 +7,10 @@ extends VehicleBody3D
 @export var engine_force_value = 40
 var steer_target = 0
 
-@export var projectile_scene : Resource
-@export var spawnBarrier = false
-@export var barrier_scene : Resource
+var projectile_scene = load("res://assets/models/components/Projectile/Projectile.tscn")
+var spawnBarrier = false
+var shootActivate = false
+var barrier_scene = load("res://assets/models/components/Barrier/Barrier.tscn")
 @export var barrier_spacing = 1.0  # Distance minimale entre deux barrières
 var last_barrier_position = Vector3.ZERO
 
@@ -26,13 +27,17 @@ var last_barrier_position = Vector3.ZERO
 	
 @onready var engine_sound = $EngineSound as AudioStreamPlayer
 
+var bonusLabel = null
+var countTimeBonus : float = -1.0
+
 func _ready() -> void:
 	$SubViewport/HealthBar.max_value = default_life
 	$SubViewport/HealthBar.value = default_life
 	life = default_life
+	bonusLabel = $Hud/Label2
 
 func shoot():
-	if projectile_scene:
+	if shootActivate:
 		var projectile = projectile_scene.instantiate()
 		projectile.transform = Transform3D(transform.basis, transform.origin)
 		get_parent().add_child(projectile)
@@ -40,9 +45,28 @@ func shoot():
 func _process(delta):
 	if Input.is_action_just_pressed(getTouch("croix")):
 		shoot()
+	# 10 secondes
+	if(countTimeBonus < 0.0):
+		bonusLabel.text = "Aucun bonus"
+		return
+	countTimeBonus += delta
+	
+	bonusLabel.text = "Bonus: "+str(10-int(countTimeBonus))
+	if spawnBarrier:
+		bonusLabel.text += " Barrier"
+	else:
+		bonusLabel.text += " Shoot"
+	
+	if(countTimeBonus < 10):
+		return
+	spawnBarrier = false
+	shootActivate = false
+	
+	countTimeBonus = -1
+	
 
 func spawn_barrier():
-	if barrier_scene:
+	if spawnBarrier:
 		var barrier = barrier_scene.instantiate()
 		barrier.transform = Transform3D(transform.basis, transform.origin)
 		get_parent().add_child(barrier)
@@ -148,3 +172,16 @@ func _on_body_entered(body: Node):
 		if body is RigidBody3D:
 			var nf = (collision_normal * repulsion_force) * 10
 			body.apply_central_impulse(nf)
+
+
+func applyRandomBonus():
+	print("Call bonus")
+	if countTimeBonus >= 0:
+		print("Call bonus n")
+		return
+	countTimeBonus = 0.0
+	var result = RandomNumberGenerator.new().randi_range(0,1)
+	print("Call bonus o"+str(result))
+	match result:
+		0: spawnBarrier = true
+		1: shootActivate = true
